@@ -138,11 +138,6 @@ a:hover { color: var(--stone-dark); }
   color: var(--text);
 }
 .lk-brand svg { width: 28px; height: 28px; flex-shrink: 0; }
-.lk-brand-text {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-}
 .lk-brand-name {
   font-family: 'Literata', Georgia, serif;
   font-weight: 700;
@@ -152,20 +147,6 @@ a:hover { color: var(--stone-dark); }
   word-spacing: normal;
   letter-spacing: normal;
 }
-.lk-brand-tag {
-  font-family: 'Lexend Deca', sans-serif;
-  font-size: 9.5px;
-  color: var(--text-muted);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  display: block;
-  line-height: 1.2;
-  word-spacing: normal;
-  text-align: left;
-}
-.lk-brand-tag a { color: var(--teal); text-decoration: none; }
-.lk-brand-tag a:hover { color: var(--stone-dark); }
 
 /* Future nav items — non-clickable, muted */
 .lk-nav-future {
@@ -303,12 +284,6 @@ a:hover { color: var(--stone-dark); }
   font-weight: 700;
   color: var(--stone-dark);
   margin-bottom: 0.25rem;
-}
-.lk-mobile-menu-subtitle {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
 }
 .lk-mobile-menu nav {
   display: flex;

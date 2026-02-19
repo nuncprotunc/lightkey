@@ -27,10 +27,7 @@ const LK = {
             <line x1="6" y1="32" x2="30" y2="32" stroke="#5C4D3A" stroke-width="1.5"/>
             <line x1="10" y1="31" x2="26" y2="31" stroke="#3D7A8A" stroke-width="0.6" opacity="0.5"/>
           </svg>
-          <span class="lk-brand-text">
-            <span class="lk-brand-name">LightKey</span>
-            <span class="lk-brand-tag">A GlassCase Initiative</span>
-          </span>
+          <span class="lk-brand-name">LightKey</span>
         </a>
         </div>
         <div class="lk-nav-right">
@@ -59,7 +56,6 @@ const LK = {
     <div class="lk-mobile-menu" id="lkMobileMenu" aria-hidden="true">
       <div class="lk-mobile-menu-header">
         <div class="lk-mobile-menu-title">LightKey</div>
-        <div class="lk-mobile-menu-subtitle">A GlassCase Initiative</div>
       </div>
       <nav aria-label="Mobile navigation">
         <a href="/" data-nav="home">Home</a>
