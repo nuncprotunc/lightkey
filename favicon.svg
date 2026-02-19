@@ -1,0 +1,20 @@
+<svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background fill -->
+  <rect width="36" height="36" fill="#F5F0E8"/>
+  <!-- Arch body -->
+  <path d="M6 32 L6 18 Q6 6 18 6 Q30 6 30 18 L30 32" stroke="#5C4D3A" stroke-width="1.5" fill="#F5F0E8"/>
+  <!-- Keystone cap (trapezoid) -->
+  <path d="M14 6 L15 2 L21 2 L22 6" stroke="#9A5530" stroke-width="1.5" fill="rgba(154,85,48,0.15)"/>
+  <!-- Keystone circle -->
+  <circle cx="18" cy="3.5" r="0.8" fill="#9A5530"/>
+  <!-- Keystone pin line -->
+  <line x1="18" y1="4.3" x2="18" y2="5.5" stroke="#9A5530" stroke-width="0.8"/>
+  <!-- Left voussoir hint -->
+  <line x1="10" y1="12" x2="8" y2="16" stroke="#5C4D3A" stroke-width="0.6" opacity="0.3"/>
+  <!-- Right voussoir hint -->
+  <line x1="26" y1="12" x2="28" y2="16" stroke="#5C4D3A" stroke-width="0.6" opacity="0.3"/>
+  <!-- Base line -->
+  <line x1="6" y1="32" x2="30" y2="32" stroke="#5C4D3A" stroke-width="1.5"/>
+  <!-- Teal accent line -->
+  <line x1="10" y1="31" x2="26" y2="31" stroke="#3D7A8A" stroke-width="0.6" opacity="0.5"/>
+</svg>
