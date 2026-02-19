@@ -153,6 +153,44 @@ a:hover { color: var(--stone-dark); }
 .lk-brand-tag a { color: var(--teal); text-decoration: none; }
 .lk-brand-tag a:hover { color: var(--stone-dark); }
 
+/* Future nav items — non-clickable, muted */
+.lk-nav-future {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: default;
+  opacity: 0.6;
+}
+
+.lk-nav-badge {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: var(--teal-light);
+  border: 1px solid var(--teal-border);
+  border-radius: 4px;
+  padding: 1px 5px;
+  line-height: 1.6;
+}
+
+.lk-mobile-future {
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.55;
+  cursor: default;
+}
+
 /* Desktop nav links */
 .lk-nav-right {
   display: flex;

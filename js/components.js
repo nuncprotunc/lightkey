@@ -33,6 +33,9 @@ const LK = {
         </a>
         <div class="lk-nav-right">
           <nav class="lk-desktop-nav" aria-label="Main links">
+            <span class="lk-nav-future">Pathways <span class="lk-nav-badge">Building</span></span>
+            <span class="lk-nav-future">Guides <span class="lk-nav-badge">Building</span></span>
+            <span class="lk-nav-future">About <span class="lk-nav-badge">Building</span></span>
           </nav>
           <button class="lk-a11y-toggle" id="lkReadingToggle"
                   aria-pressed="false"
@@ -58,6 +61,9 @@ const LK = {
       </div>
       <nav aria-label="Mobile navigation">
         <a href="/" data-nav="home">Home</a>
+        <span class="lk-mobile-future">Pathways <span class="lk-nav-badge">Building</span></span>
+        <span class="lk-mobile-future">Guides <span class="lk-nav-badge">Building</span></span>
+        <span class="lk-mobile-future">About <span class="lk-nav-badge">Building</span></span>
       </nav>
     </div>
     <div class="lk-mobile-overlay" id="lkMobileOverlay"></div>
