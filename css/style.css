@@ -126,8 +126,9 @@ a:hover { color: var(--stone-dark); }
   gap: 10px;
   text-decoration: none;
   color: var(--text);
-  flex-shrink: 0;
+  flex: 0 0 auto;
   min-width: 0;
+  max-width: fit-content;
 }
 .lk-brand svg { width: 28px; height: 28px; flex-shrink: 0; }
 .lk-brand-text {
@@ -141,6 +142,8 @@ a:hover { color: var(--stone-dark); }
   font-size: 18px;
   color: var(--stone-dark);
   line-height: 1.1;
+  word-spacing: normal;
+  letter-spacing: normal;
 }
 .lk-brand-tag {
   font-family: 'Lexend Deca', sans-serif;
@@ -149,13 +152,10 @@ a:hover { color: var(--stone-dark); }
   letter-spacing: 0.06em;
   text-transform: uppercase;
   white-space: nowrap;
-  display: inline-block !important;
-  width: auto !important;
-  max-width: none !important;
-  justify-content: flex-start !important;
-  align-items: center !important;
-  gap: 0 !important;
+  display: block;
   line-height: 1.2;
+  word-spacing: normal;
+  text-align: left;
 }
 .lk-brand-tag a { color: var(--teal); text-decoration: none; }
 .lk-brand-tag a:hover { color: var(--stone-dark); }
