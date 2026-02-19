@@ -121,12 +121,13 @@ a:hover { color: var(--stone-dark); }
 
 /* Brand */
 .lk-brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
   text-decoration: none;
   color: var(--text);
   flex-shrink: 0;
+  min-width: 0;
 }
 .lk-brand svg { width: 28px; height: 28px; flex-shrink: 0; }
 .lk-brand-text {

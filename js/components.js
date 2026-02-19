@@ -28,7 +28,7 @@ const LK = {
           </svg>
           <span class="lk-brand-text">
             <span class="lk-brand-name">LightKey</span>
-            <span class="lk-brand-tag">A&nbsp;<a href="https://glasscase.org">GlassCase</a>&nbsp;Initiative</span>
+            <span class="lk-brand-tag">A <a href="https://glasscase.org">GlassCase</a> Initiative</span>
           </span>
         </a>
         <div class="lk-nav-right">
