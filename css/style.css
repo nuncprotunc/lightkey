@@ -44,9 +44,17 @@
 
   /* ── Reading ── */
   --lh-body: 1.85;
+  --ls-body: 0.01em;
+  --ws-body: 0.03em;
+  --fs-body: 17px;
 }
 
-body.reading-relaxed { --lh-body: 2.0; }
+body.reading-relaxed {
+  --lh-body: 2.4;
+  --ls-body: 0.12em;
+  --ws-body: 0.16em;
+  --fs-body: 18px;
+}
 
 /* ═══════════════════════════════════════════════════════
    RESET + BASE
@@ -64,12 +72,13 @@ body {
   font-family: 'Lexend Deca', Verdana, Tahoma, sans-serif;
   background: var(--bg);
   color: var(--text);
-  font-size: 17px;
+  font-size: var(--fs-body);
   line-height: var(--lh-body);
-  letter-spacing: 0.01em;
-  word-spacing: 0.03em;
+  letter-spacing: var(--ls-body);
+  word-spacing: var(--ws-body);
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
+  transition: font-size 0.3s ease, line-height 0.3s ease, letter-spacing 0.3s ease, word-spacing 0.3s ease;
 }
 
 a {

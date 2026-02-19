@@ -33,10 +33,6 @@ const LK = {
         </a>
         <div class="lk-nav-right">
           <nav class="lk-desktop-nav" aria-label="Main links">
-            <a href="/pathways">Pathways</a>
-            <a href="/guides">Guides</a>
-            <a href="/about">About</a>
-            <a href="/resources">Resources</a>
           </nav>
           <button class="lk-a11y-toggle" id="lkReadingToggle"
                   aria-pressed="false"
@@ -62,10 +58,6 @@ const LK = {
       </div>
       <nav aria-label="Mobile navigation">
         <a href="/" data-nav="home">Home</a>
-        <a href="/pathways" data-nav="pathways">Pathways</a>
-        <a href="/guides" data-nav="guides">Guides</a>
-        <a href="/about" data-nav="about">About</a>
-        <a href="/resources" data-nav="resources">Resources</a>
       </nav>
     </div>
     <div class="lk-mobile-overlay" id="lkMobileOverlay"></div>
