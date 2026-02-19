@@ -149,6 +149,12 @@ a:hover { color: var(--stone-dark); }
   letter-spacing: 0.06em;
   text-transform: uppercase;
   white-space: nowrap;
+  display: inline-block !important;
+  width: auto !important;
+  max-width: none !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  gap: 0 !important;
   line-height: 1.2;
 }
 .lk-brand-tag a { color: var(--teal); text-decoration: none; }
