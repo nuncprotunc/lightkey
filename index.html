@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LightKey — A GlassCase Initiative</title>
+<link rel="icon" type="image/svg+xml" href="/favicon-512.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,300;7..72,400;7..72,500;7..72,700&family=Lexend+Deca:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  /* ═══════════════════════════════════════════════════════
+     Page-specific styles — index.html only
+     Shared tokens, nav, and footer live in /css/style.css
+     ═══════════════════════════════════════════════════════ */
+
+  /* ── Hero ── */
+  .hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 28px 64px;
+    text-align: center;
+  }
+  .hero h1 {
+    font-family: 'Literata', Georgia, serif;
+    font-size: clamp(32px, 5vw, 46px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 20px;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero h1 em { font-style: italic; color: var(--copper); }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--text-soft);
+    max-width: 560px;
+    margin: 0 auto 12px;
+    line-height: 1.8;
+  }
+  .hero-institutional {
+    font-size: 14px;
+    color: var(--text-muted);
+    max-width: 480px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+  }
+  .hero-institutional a {
+    color: var(--teal);
+    border-bottom: 1px solid var(--teal-border);
+  }
+  .hero-institutional a:hover { color: var(--stone-dark); }
+
+  .cta-primary {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    background: var(--copper);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s ease;
+  }
+  .cta-primary:hover { background: var(--copper-hover); color: white; }
+  .cta-primary:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+
+  .arch-visual {
+    max-width: 320px;
+    margin: 48px auto 0;
+    height: 200px;
+  }
+  .arch-svg { width: 100%; height: 100%; }
+
+  /* ── Sections ── */
+  .section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 64px 28px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── Strand legend ── */
+  .strand-legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    padding: 14px 18px;
+    background: var(--surface);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  .strand-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-soft);
+    letter-spacing: 0.02em;
+  }
+  .strand-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .strand-indicator.s-right    { background: var(--strand-right); }
+  .strand-indicator.s-timeline { background: var(--strand-timeline); }
+  .strand-indicator.s-decision { background: var(--strand-decision); }
+
+  /* ── Archway pathway ── */
+  .archway {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  }
+  .archway-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .archway-title {
+    font-family: 'Literata', Georgia, serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .archway-badge {
+    font-size: 12px;
+    color: var(--stone);
+    background: var(--surface);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-weight: 500;
+  }
+
+  .stone-sequence { display: flex; flex-direction: column; }
+  .stone-block {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 20px;
+  }
+  .stone-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .stone-shape {
+    width: 44px;
+    height: 38px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Literata', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-muted);
+    clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+  }
+  .stone-shape.complete {
+    background: rgba(106,138,90,0.1);
+    border-color: var(--done);
+    color: var(--done);
+  }
+  .stone-shape.keystone-active {
+    background: var(--copper);
+    border-color: var(--copper);
+    color: white;
+    box-shadow: 0 4px 16px rgba(154,85,48,0.2);
+  }
+  .stone-connector {
+    width: 2px;
+    flex-grow: 1;
+    min-height: 16px;
+    background: var(--border);
+    margin: 4px 0;
+  }
+  .stone-connector.done { background: var(--done); }
+
+  .stone-body { padding-bottom: 24px; }
+  .stone-name {
+    font-family: 'Literata', Georgia, serif;
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: var(--text);
+  }
+
+  .stone-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 3px 10px;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-left: 8px;
+    font-weight: 500;
+  }
+  .stone-tag::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .tag-right      { background: var(--strand-right-bg);    color: var(--strand-right); }
+  .tag-right::before { background: var(--strand-right); }
+  .tag-timeline   { background: var(--strand-timeline-bg); color: var(--strand-timeline); }
+  .tag-timeline::before { background: var(--strand-timeline); }
+  .tag-decision   { background: var(--strand-decision-bg); color: var(--strand-decision); }
+  .tag-decision::before { background: var(--strand-decision); }
+  .tag-foundation { background: rgba(106,138,90,0.1); color: var(--done); }
+  .tag-foundation::before { background: var(--done); }
+
+  .stone-desc {
+    font-size: 16px;
+    color: var(--text-soft);
+    line-height: 1.8;
+    max-width: 540px;
+  }
+  .stone-note {
+    margin-top: 10px;
+    padding: 14px 18px;
+    background: var(--bg);
+    border-radius: 8px;
+    font-size: 15px;
+    color: var(--text-soft);
+    line-height: 1.75;
+    border-left: 3px solid var(--border);
+  }
+  .stone-note.note-right    { border-left-color: var(--strand-right); }
+  .stone-note.note-timeline { border-left-color: var(--strand-timeline); }
+  .stone-note.note-decision { border-left-color: var(--strand-decision); }
+
+  .stone-options {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .option-stone {
+    font-size: 13px;
+    padding: 8px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-soft);
+    transition: border-color 0.2s ease;
+  }
+  .option-stone:hover { border-color: var(--teal); }
+
+  /* ── Values grid ── */
+  .values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .value-card {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+  }
+  .value-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  }
+  .value-card h3 {
+    font-family: 'Literata', Georgia, serif;
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+  .value-card p {
+    font-size: 15px;
+    color: var(--text-soft);
+    line-height: 1.75;
+  }
+  .value-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    font-size: 18px;
+  }
+  .value-icon.vi-teal   { background: var(--teal-light);              color: var(--teal); }
+  .value-icon.vi-copper { background: var(--copper-bg);               color: var(--copper); }
+  .value-icon.vi-stone  { background: rgba(139,115,85,0.08);          color: var(--stone); }
+
+  /* ── Founder ── */
+  .founder-intro {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    margin-top: 8px;
+  }
+  .founder-portrait {
+    flex: 0 0 auto;
+    width: clamp(100px, 14vw, 140px);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--border);
+    background: var(--surface);
+    box-shadow: 0 8px 24px rgba(90,78,64,0.12);
+  }
+  .founder-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .founder-bio { flex: 1 1 auto; min-width: 0; }
+  .founder-bio p {
+    font-size: 16px;
+    color: var(--text-soft);
+    line-height: 1.85;
+  }
+  .founder-bio .founder-meta {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 32px; }
+    .hero { padding: 48px 24px 32px; }
+    .values { grid-template-columns: 1fr; }
+    .archway { padding: 24px; }
+    .strand-legend { gap: 12px; }
+  }
+  @media (max-width: 640px) {
+    .founder-intro { flex-direction: column; gap: 16px; align-items: flex-start; }
+    .founder-portrait { width: 120px; }
+    .section { padding: 48px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="lk-nav"></div>
+<div id="lk-mobile-menu"></div>
+
+<main id="main">
+
+  <!-- ─── Hero ─── -->
+  <section class="hero">
+    <h1>The structure that holds your legal pathway <em>together</em></h1>
+    <p class="hero-sub">LightKey turns complex legal processes into clear, walkable pathways. Built for everyone — especially people who think differently.</p>
+    <p class="hero-institutional">A cognitive accessibility initiative of <a href="https://glasscase.org">GlassCase.org</a> — the civic-legal transparency lab making the operation of law visible and navigable across Australian jurisdictions.</p>
+    <a href="#explainer" class="cta-primary">Enter the archway →</a>
+
+    <div class="arch-visual" role="img" aria-label="Keystone arch representing structural support for legal navigation">
+      <svg class="arch-svg" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M40 190 L40 100 Q40 30 160 30 Q280 30 280 100 L280 190" stroke="#8B7355" stroke-width="2" fill="none"/>
+        <path d="M145 30 L148 16 L172 16 L175 30" stroke="#9A5530" stroke-width="2" fill="rgba(154,85,48,0.08)"/>
+        <circle cx="160" cy="22" r="2.5" stroke="#9A5530" stroke-width="1" fill="none"/>
+        <line x1="160" y1="24.5" x2="160" y2="28" stroke="#9A5530" stroke-width="1"/>
+        <line x1="80"  y1="56"  x2="68"  y2="72"  stroke="#8B7355" stroke-width="0.8" opacity="0.3"/>
+        <line x1="240" y1="56"  x2="252" y2="72"  stroke="#8B7355" stroke-width="0.8" opacity="0.3"/>
+        <line x1="56"  y1="82"  x2="48"  y2="104" stroke="#8B7355" stroke-width="0.8" opacity="0.3"/>
+        <line x1="264" y1="82"  x2="272" y2="104" stroke="#8B7355" stroke-width="0.8" opacity="0.3"/>
+        <line x1="30"  y1="190" x2="290" y2="190" stroke="#8B7355" stroke-width="1.5"/>
+        <ellipse cx="160" cy="188" rx="60" ry="6" fill="rgba(154,85,48,0.06)"/>
+        <line x1="80"  y1="188" x2="240" y2="188" stroke="#3D7A8A" stroke-width="0.8" opacity="0.35"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ─── Legal Pathway Explainer ─── -->
+  <section class="section" id="explainer">
+    <div class="lk-section-label">Legal Pathway Visual Explainer</div>
+    <h2>Making an FOI Request</h2>
+    <p class="lk-lead">Each stone in the arch is a step. The keystone is the critical juncture. Strand colours show what kind of element each step contains.</p>
+
+    <div class="strand-legend" role="img" aria-label="Legend: teal indicates rights, copper indicates timelines, stone indicates decision points">
+      <div class="strand-legend-item">
+        <div class="strand-indicator s-right"></div>
+        <span>Right / entitlement</span>
+      </div>
+      <div class="strand-legend-item">
+        <div class="strand-indicator s-timeline"></div>
+        <span>Timeline / deadline</span>
+      </div>
+      <div class="strand-legend-item">
+        <div class="strand-indicator s-decision"></div>
+        <span>Decision / choice point</span>
+      </div>
+    </div>
+
+    <div class="archway">
+      <div class="archway-header">
+        <span class="archway-title">Freedom of Information — Commonwealth</span>
+        <span class="archway-badge">5 stones · 1 keystone · 2 choices</span>
+      </div>
+
+      <div class="stone-sequence">
+
+        <div class="stone-block">
+          <div class="stone-marker">
+            <div class="stone-shape complete">1</div>
+            <div class="stone-connector done"></div>
+          </div>
+          <div class="stone-body">
+            <div class="stone-name">Identify your right
+              <span class="stone-tag tag-right">Right</span>
+              <span class="stone-tag tag-foundation">Foundation</span>
+            </div>
+            <div class="stone-desc">You have a legal right to access documents held by Commonwealth agencies. This is the foundation stone — everything else rests on it. No citizenship, residency, or special qualifications required.</div>
+            <div class="stone-note note-right">This right comes from the Freedom of Information Act 1982 (Cth), section 11. It exists for everyone.</div>
+          </div>
+        </div>
+
+        <div class="stone-block">
+          <div class="stone-marker">
+            <div class="stone-shape complete">2</div>
+            <div class="stone-connector done"></div>
+          </div>
+          <div class="stone-body">
+            <div class="stone-name">Prepare your request</div>
+            <div class="stone-desc">Write a request that describes what you're looking for. You don't need file names — describe the topic, time period, and the kinds of documents they might be. Think subject and date range.</div>
+            <div class="stone-note">A reliable starting pattern: "All correspondence, briefing notes, and minutes about [your topic] between [start date] and [end date]."</div>
+          </div>
+        </div>
+
+        <div class="stone-block">
+          <div class="stone-marker">
+            <div class="stone-shape keystone-active">3</div>
+            <div class="stone-connector"></div>
+          </div>
+          <div class="stone-body">
+            <div class="stone-name">Lodge with the agency
+              <span class="stone-tag tag-timeline">Keystone · 30 days</span>
+            </div>
+            <div class="stone-desc">This is the keystone moment. Submitting your request to the agency starts the 30-day statutory clock. Once this stone is placed, the arch holds — the agency is bound by law to respond.</div>
+            <div class="stone-note note-timeline">The agency may try to narrow your request (practical refusal, s 24) or consult third parties (s 26A). These are part of the process — they don't remove the stone, they just adjust its load.</div>
+          </div>
+        </div>
+
+        <div class="stone-block">
+          <div class="stone-marker">
+            <div class="stone-shape">4</div>
+            <div class="stone-connector"></div>
+          </div>
+          <div class="stone-body">
+            <div class="stone-name">Agency decision
+              <span class="stone-tag tag-decision">Decision point</span>
+            </div>
+            <div class="stone-desc">The agency decides whether to grant full access, partial access with exemption-based redactions, or refuse access. Each exemption (ss 33–47C) must be individually justified.</div>
+            <div class="stone-note note-decision">Look for the schedule of documents — it lists every document identified, the decision made on each, and which exemption applies. This is your map of the agency's reasoning.</div>
+          </div>
+        </div>
+
+        <div class="stone-block">
+          <div class="stone-marker">
+            <div class="stone-shape">5</div>
+          </div>
+          <div class="stone-body">
+            <div class="stone-name">Review options
+              <span class="stone-tag tag-decision">Choice point</span>
+            </div>
+            <div class="stone-desc">If the decision doesn't satisfy, three escalating routes exist. Each re-examines the original decision from a different height in the arch.</div>
+            <div class="stone-options">
+              <span class="option-stone">Internal review (same agency, fresh eyes)</span>
+              <span class="option-stone">Information Commissioner review</span>
+              <span class="option-stone">Administrative Appeals Tribunal</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Values ─── -->
+  <section class="section">
+    <div class="lk-section-label">What holds us up</div>
+    <h2>Stability, warmth, trust</h2>
+    <p class="lk-lead">LightKey is built for people who need the structure to hold — not just to look good.</p>
+
+    <div class="values">
+      <div class="value-card">
+        <div class="value-icon vi-teal" aria-hidden="true">◇</div>
+        <h3>Grounded design</h3>
+        <p>Warm tones bridged with cool clarity. Generous spacing, and fonts built for reading fluency. Your nervous system matters as much as your legal rights.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon vi-copper" aria-hidden="true">◎</div>
+        <h3>Strand-coded clarity</h3>
+        <p>Every pathway element is colour-coded: rights in teal, timelines in copper, decisions in stone. You always know what kind of step you're looking at.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon vi-stone" aria-hidden="true">△</div>
+        <h3>Built to last</h3>
+        <p>No animation tricks. No moving parts. Just solid, still, reliable information that stays where you put it. Stability is an accessibility feature.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Founder ─── -->
+  <section class="section">
+    <div class="lk-section-label">About the founder</div>
+    <h2>Jay Spudvilas</h2>
+    <div class="founder-intro">
+      <div class="founder-portrait">
+        <img src="/portrait.png" alt="Portrait of Jay Spudvilas" width="320" height="426" loading="lazy" decoding="async" />
+      </div>
+      <div class="founder-bio">
+        <p>Jay Spudvilas is an education leader and administrative process researcher preparing for the Juris Doctor at ANU (2026). His work draws on twelve years in public education governance: implementing statutory frameworks, building audit-ready evidence systems, navigating administrative compliance, and designing data systems that survive external review.</p>
+        <p class="founder-meta">
+          LightKey is a <a href="https://glasscase.org">GlassCase</a> initiative. Research identity: <a href="https://orcid.org/0009-0000-0945-0380" target="_blank" rel="noopener">ORCID 0009-0000-0945-0380</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="lk-footer"></div>
+
+<script src="/js/main.js"></script>
+<script src="/js/components.js"></script>
+
+</body>
+</html>
