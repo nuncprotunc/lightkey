@@ -26,8 +26,10 @@ const LK = {
             <line x1="6" y1="32" x2="30" y2="32" stroke="#5C4D3A" stroke-width="1.5"/>
             <line x1="10" y1="31" x2="26" y2="31" stroke="#3D7A8A" stroke-width="0.6" opacity="0.5"/>
           </svg>
-          <span class="lk-brand-name">LightKey</span>
-          <span class="lk-brand-tag">A&nbsp;<a href="https://glasscase.org">GlassCase</a>&nbsp;Initiative</span>
+          <span class="lk-brand-text">
+            <span class="lk-brand-name">LightKey</span>
+            <span class="lk-brand-tag">A&nbsp;<a href="https://glasscase.org">GlassCase</a>&nbsp;Initiative</span>
+          </span>
         </a>
         <div class="lk-nav-right">
           <nav class="lk-desktop-nav" aria-label="Main links">

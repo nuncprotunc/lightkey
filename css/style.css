@@ -119,20 +119,27 @@ a:hover { color: var(--stone-dark); }
   color: var(--text);
   flex-shrink: 0;
 }
-.lk-brand svg { width: 28px; height: 28px; }
+.lk-brand svg { width: 28px; height: 28px; flex-shrink: 0; }
+.lk-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
 .lk-brand-name {
   font-family: 'Literata', Georgia, serif;
   font-weight: 700;
   font-size: 18px;
   color: var(--stone-dark);
+  line-height: 1.1;
 }
 .lk-brand-tag {
   font-family: 'Lexend Deca', sans-serif;
-  font-size: 10px;
+  font-size: 9.5px;
   color: var(--text-muted);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   white-space: nowrap;
+  line-height: 1.2;
 }
 .lk-brand-tag a { color: var(--teal); text-decoration: none; }
 .lk-brand-tag a:hover { color: var(--stone-dark); }
