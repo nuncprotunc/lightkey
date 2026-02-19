@@ -125,15 +125,17 @@ a:hover { color: var(--stone-dark); }
 }
 
 /* Brand */
+.lk-brand-wrap {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
 .lk-brand {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   text-decoration: none;
   color: var(--text);
-  flex: 0 0 auto;
-  min-width: 0;
-  max-width: fit-content;
 }
 .lk-brand svg { width: 28px; height: 28px; flex-shrink: 0; }
 .lk-brand-text {

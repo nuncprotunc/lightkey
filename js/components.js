@@ -15,6 +15,7 @@ const LK = {
   nav: `
     <nav class="lk-nav" role="navigation" aria-label="Site navigation">
       <div class="lk-nav-inner">
+        <div class="lk-brand-wrap">
         <a href="/" class="lk-brand" aria-label="LightKey home">
           <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M6 32 L6 18 Q6 6 18 6 Q30 6 30 18 L30 32" stroke="#5C4D3A" stroke-width="1.5" fill="none"/>
@@ -31,6 +32,7 @@ const LK = {
             <span class="lk-brand-tag">A <a href="https://glasscase.org">GlassCase</a> Initiative</span>
           </span>
         </a>
+        </div>
         <div class="lk-nav-right">
           <nav class="lk-desktop-nav" aria-label="Main links">
             <span class="lk-nav-future">Pathways <span class="lk-nav-badge">Building</span></span>
