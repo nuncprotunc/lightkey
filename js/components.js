@@ -73,7 +73,7 @@ const LK = {
     <footer class="lk-footer">
       <div class="lk-footer-bottom">
         <div class="lk-footer-copyright">
-          &copy; 2025&ndash;2026 LightKey &middot; A GlassCase Initiative &middot; <a href="https://glasscase.org">glasscase.org</a>
+          &copy; 2026 LightKey &middot; A GlassCase Initiative &middot; <a href="https://glasscase.org">glasscase.org</a>
         </div>
         <p class="lk-footer-disclaimer">Led by Jay Spudvilas (Jayden Spudvilas-Powell). Built in Australia. Made for everyone who believes fairness should be visible.</p>
         <p class="lk-footer-disclaimer">Information only, not legal advice.</p>
