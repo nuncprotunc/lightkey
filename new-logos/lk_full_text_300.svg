@@ -1,0 +1,29 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lkt-ring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9A5530"/>
+      <stop offset="100%" stop-color="#3D7A8A"/>
+    </linearGradient>
+    <linearGradient id="lkt-divider" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9A5530"/>
+      <stop offset="100%" stop-color="#3D7A8A"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer ring -->
+  <circle cx="150" cy="150" r="146" fill="#F5F0E8" stroke="url(#lkt-ring)" stroke-width="4"/>
+  <!-- Arch (smaller, upper half) -->
+  <path d="M 118 132 L 118 106 Q 118 70 150 70 Q 182 70 182 106 L 182 132" stroke="#5C4D3A" stroke-width="4" fill="#F5F0E8"/>
+  <!-- Keystone cap -->
+  <path d="M 140 70 L 143 58 L 157 58 L 160 70" stroke="#9A5530" stroke-width="3" fill="rgba(154,85,48,0.15)"/>
+  <!-- Keystone circle -->
+  <circle cx="150" cy="61" r="3" fill="#9A5530"/>
+  <!-- Base of arch -->
+  <line x1="118" y1="132" x2="182" y2="132" stroke="#5C4D3A" stroke-width="4"/>
+  <line x1="124" y1="129" x2="176" y2="129" stroke="#3D7A8A" stroke-width="2" opacity="0.5"/>
+  <!-- Divider -->
+  <rect x="100" y="148" width="100" height="3" fill="url(#lkt-divider)"/>
+  <!-- Text: LIGHT -->
+  <text x="150" y="188" font-family="Georgia, serif" font-size="32" font-weight="bold" fill="#2A2118" text-anchor="middle" letter-spacing="3">LIGHT</text>
+  <!-- Text: KEY -->
+  <text x="150" y="224" font-family="Georgia, serif" font-size="32" font-weight="bold" fill="#9A5530" text-anchor="middle" letter-spacing="3">KEY</text>
+</svg>

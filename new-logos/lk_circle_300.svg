@@ -1,0 +1,25 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lk300-ring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9A5530"/>
+      <stop offset="100%" stop-color="#3D7A8A"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer ring -->
+  <circle cx="150" cy="150" r="146" fill="#F5F0E8" stroke="url(#lk300-ring)" stroke-width="4"/>
+  <!-- Arch body -->
+  <path d="M 75 240 L 75 155 Q 75 70 150 70 Q 225 70 225 155 L 225 240" stroke="#5C4D3A" stroke-width="6" fill="#F5F0E8"/>
+  <!-- Keystone cap -->
+  <path d="M 128 70 L 132 50 L 168 50 L 172 70" stroke="#9A5530" stroke-width="5" fill="rgba(154,85,48,0.15)"/>
+  <!-- Keystone circle -->
+  <circle cx="150" cy="54" r="5" fill="#9A5530"/>
+  <!-- Keystone pin -->
+  <line x1="150" y1="59" x2="150" y2="68" stroke="#9A5530" stroke-width="3"/>
+  <!-- Voussoir hints -->
+  <line x1="103" y1="108" x2="89" y2="128" stroke="#5C4D3A" stroke-width="2" opacity="0.3"/>
+  <line x1="197" y1="108" x2="211" y2="128" stroke="#5C4D3A" stroke-width="2" opacity="0.3"/>
+  <!-- Base line -->
+  <line x1="75" y1="240" x2="225" y2="240" stroke="#5C4D3A" stroke-width="6"/>
+  <!-- Teal accent -->
+  <line x1="90" y1="234" x2="210" y2="234" stroke="#3D7A8A" stroke-width="3" opacity="0.5"/>
+</svg>
