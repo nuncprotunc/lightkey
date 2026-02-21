@@ -35,6 +35,7 @@ const LK = {
             <span class="lk-nav-future">Pathways <span class="lk-nav-badge">Building</span></span>
             <span class="lk-nav-future">Guides <span class="lk-nav-badge">Building</span></span>
             <span class="lk-nav-future">About <span class="lk-nav-badge">Building</span></span>
+            <a href="/legal/" data-nav="legal">Use &amp; Privacy</a>
           </nav>
           <button class="lk-a11y-toggle" id="lkReadingToggle"
                   aria-pressed="false"
@@ -62,6 +63,7 @@ const LK = {
         <span class="lk-mobile-future">Pathways <span class="lk-nav-badge">Building</span></span>
         <span class="lk-mobile-future">Guides <span class="lk-nav-badge">Building</span></span>
         <span class="lk-mobile-future">About <span class="lk-nav-badge">Building</span></span>
+        <a href="/legal/" data-nav="legal">Use &amp; Privacy</a>
       </nav>
     </div>
     <div class="lk-mobile-overlay" id="lkMobileOverlay"></div>
@@ -71,10 +73,10 @@ const LK = {
     <footer class="lk-footer">
       <div class="lk-footer-bottom">
         <div class="lk-footer-copyright">
-          &copy; 2026 LightKey &middot; A GlassCase Initiative &middot; <a href="https://glasscase.org">glasscase.org</a>
+          &copy; 2026 LightKey &middot; A <a href="https://glasscase.org">GlassCase</a> Initiative &middot; <a href="/legal/">Use &amp; Privacy</a>
         </div>
         <p class="lk-footer-disclaimer">Led by Jay Spudvilas (Jayden Spudvilas-Powell). Built in Australia. Made for everyone who believes fairness should be visible.</p>
-        <p class="lk-footer-disclaimer">Information only, not legal advice.</p>
+        <p class="lk-footer-disclaimer">Information only, not legal advice. See <a href="/legal/">Use &amp; Privacy</a> for full terms.</p>
       </div>
     </footer>
   `
@@ -101,9 +103,11 @@ function lkSetActiveNav() {
   else if (path.startsWith('/guides'))    key = 'guides';
   else if (path.startsWith('/about'))     key = 'about';
   else if (path.startsWith('/resources')) key = 'resources';
+  else if (path.startsWith('/legal'))     key = 'legal';
 
-  const link = document.querySelector('.lk-mobile-menu [data-nav="' + key + '"]');
-  if (link) link.classList.add('active');
+  document.querySelectorAll('[data-nav="' + key + '"]').forEach(function(el) {
+    el.classList.add('active');
+  });
 }
 
 function lkInitMobileMenu() {

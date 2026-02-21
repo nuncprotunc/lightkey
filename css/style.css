@@ -205,6 +205,11 @@ a:hover { color: var(--stone-dark); }
   transition: color 0.2s;
 }
 .lk-desktop-nav a:hover { color: var(--copper); }
+.lk-desktop-nav a.active {
+  color: var(--copper);
+  border-bottom: 2px solid var(--copper);
+  padding-bottom: 1px;
+}
 
 /* Accessibility toggle */
 .lk-a11y-toggle {
