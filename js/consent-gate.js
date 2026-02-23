@@ -5,7 +5,7 @@
   'use strict';
 
   var GA_ID = 'G-Z0ZKX4C4ZF';
-  var AHREFS_KEY = '81bX+0jSjxXWI25HF5EjhQ';
+  var AHREFS_KEY = null;
   var STORE = 'analytics_consent';
 
   /* ── state ── */
