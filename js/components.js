@@ -35,7 +35,7 @@ const LK = {
             <span class="lk-nav-future">Pathways <span class="lk-nav-badge">Building</span></span>
             <span class="lk-nav-future">Guides <span class="lk-nav-badge">Building</span></span>
             <span class="lk-nav-future">About <span class="lk-nav-badge">Building</span></span>
-            <a href="/position.html" data-nav="position">Position Paper</a>
+            <a href="/position/" data-nav="position">Position Paper</a>
             <a href="/legal/" data-nav="legal">Use &amp; Privacy</a>
           </nav>
           <button class="lk-a11y-toggle" id="lkReadingToggle"
@@ -64,7 +64,7 @@ const LK = {
         <span class="lk-mobile-future">Pathways <span class="lk-nav-badge">Building</span></span>
         <span class="lk-mobile-future">Guides <span class="lk-nav-badge">Building</span></span>
         <span class="lk-mobile-future">About <span class="lk-nav-badge">Building</span></span>
-        <a href="/position.html" data-nav="position">Position Paper</a>
+        <a href="/position/" data-nav="position">Position Paper</a>
         <a href="/legal/" data-nav="legal">Use &amp; Privacy</a>
       </nav>
     </div>
