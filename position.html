@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<script src="/js/consent-gate.js" defer></script>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="81bX+0jSjxXWI25HF5EjhQ" async></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>When the Pathway Is the Barrier — LightKey Position Paper</title>
+<meta name="description" content="Australian law gives you rights. But if you cannot see the path to use them, do you really have them? A position paper on legibility as accountability infrastructure.">
+<meta name="keywords" content="LightKey, legal accessibility, administrative law, compliance theatre, FOI, freedom of information, accessibility, governance, accountability">
+<meta name="author" content="LightKey — Jay Spudvilas">
+<link rel="canonical" href="https://lightkey.org/position.html">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#F5F0E8">
+<meta name="color-scheme" content="light">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://lightkey.org/position.html">
+<meta property="og:title" content="When the Pathway Is the Barrier — LightKey Position Paper">
+<meta property="og:description" content="Australian law gives you rights. But if you cannot see the path to use them, do you really have them?">
+<meta property="og:site_name" content="LightKey">
+<meta property="og:locale" content="en_AU">
+<meta property="og:image" content="https://lightkey.org/og-image.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="When the Pathway Is the Barrier">
+<meta name="twitter:description" content="A position paper on legibility as accountability infrastructure.">
+<meta name="twitter:image" content="https://lightkey.org/og-image.png">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,300;7..72,400;7..72,500;7..72,700&family=Lexend+Deca:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  /* Position paper custom styles using LightKey design tokens */
+  .spread {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 2rem;
+  }
+  .spread-inner { 
+    max-width: 680px; 
+    margin: 0 auto; 
+    width: 100%; 
+  }
+  
+  /* Strand borders */
+  .strand-teal { border-left: 5px solid var(--teal); padding-left: 2rem; }
+  .strand-copper { border-left: 5px solid var(--copper); padding-left: 2rem; }
+  .strand-stone { border-left: 5px solid var(--stone); padding-left: 2rem; }
+  .strand-keystone { border-left: 5px solid var(--copper); padding-left: 2rem; }
+  
+  /* Backgrounds */
+  .bg-cream { background: var(--bg); }
+  .bg-teal { background: var(--teal-light); }
+  .bg-copper { background: var(--copper-bg); }
+  .bg-stone { background: rgba(139,115,85,0.08); }
+  .bg-keystone { background: rgba(154,85,48,0.12); }
+  
+  /* Typography */
+  .spread h1 { 
+    font-family: 'Literata', Georgia, serif;
+    font-size: clamp(2rem, 5vw, 2.4rem); 
+    font-weight: 400; 
+    line-height: 1.25; 
+    letter-spacing: -0.01em; 
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+  .spread h1 em { font-style: italic; color: var(--teal); }
+  
+  .spread h2 { 
+    font-family: 'Literata', Georgia, serif;
+    font-size: clamp(1.3rem, 4vw, 1.6rem); 
+    font-weight: 400; 
+    line-height: 1.35; 
+    margin-bottom: 1.25rem;
+    color: var(--text);
+  }
+  
+  .section-label {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 0.7rem; 
+    letter-spacing: 0.15em; 
+    text-transform: uppercase;
+    margin-bottom: 0.75rem; 
+    font-weight: 600;
+  }
+  .label-teal { color: var(--teal); }
+  .label-copper { color: var(--copper); }
+  .label-stone { color: var(--stone); }
+  .label-keystone { color: var(--copper); }
+  
+  .spread p { 
+    font-size: 1.05rem; 
+    margin-bottom: 1.25rem; 
+    color: var(--text-soft); 
+    max-width: 600px;
+    line-height: 1.75;
+  }
+  .lead { 
+    font-size: 1.2rem; 
+    color: var(--text); 
+    line-height: 1.65; 
+  }
+  .pull-quote {
+    font-family: 'Literata', Georgia, serif;
+    font-size: 1.3rem; 
+    font-style: italic; 
+    color: var(--text); 
+    line-height: 1.55;
+    margin: 2rem 0; 
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border); 
+    border-bottom: 1px solid var(--border);
+    max-width: 600px;
+  }
+  
+  .spread strong { color: var(--text); font-weight: 600; }
+  .spread em { font-style: italic; }
+  
+  /* Visual components */
+  .scattered-visual { 
+    display: flex; 
+    gap: 0.5rem; 
+    margin: 2rem 0; 
+    max-width: 600px; 
+    flex-wrap: wrap; 
+  }
+  .scattered-chip {
+    font-family: 'Lexend Deca', sans-serif; 
+    font-size: 0.68rem;
+    padding: 0.4rem 0.7rem; 
+    border-radius: 4px; 
+    border: 1px dashed; 
+    white-space: nowrap;
+  }
+  .chip-faded { 
+    border-color: var(--border); 
+    color: var(--text-muted); 
+    background: var(--surface); 
+  }
+  .chip-found { 
+    border-color: var(--teal); 
+    color: var(--teal); 
+    background: var(--teal-light); 
+    border-style: solid; 
+  }
+  
+  /* Timeline */
+  .timeline-visual { max-width: 600px; margin: 2rem 0; }
+  .timeline-track { 
+    display: flex; 
+    height: 56px; 
+    border-radius: 6px; 
+    overflow: hidden; 
+    border: 1px solid var(--border); 
+  }
+  .timeline-segment {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-family: 'Lexend Deca', sans-serif; 
+    font-size: 0.72rem; 
+    font-weight: 600; 
+    text-align: center; 
+    line-height: 1.3;
+  }
+  .seg-legal { 
+    width: 40%; 
+    background: var(--copper-bg); 
+    color: var(--copper); 
+    border-right: 2px solid var(--copper); 
+  }
+  .seg-breach { 
+    width: 30%; 
+    background: rgba(253,236,236,1); 
+    color: #B54A4A; 
+    border-right: 2px dashed #DD9999; 
+  }
+  .seg-invisible { 
+    flex: 1; 
+    background: var(--surface); 
+    color: var(--text-muted); 
+  }
+  .timeline-labels { 
+    display: flex; 
+    margin-top: 0.4rem; 
+    font-family: 'Lexend Deca', sans-serif; 
+    font-size: 0.65rem; 
+    color: var(--text-soft); 
+  }
+  .timeline-labels span:first-child { width: 40%; }
+  .timeline-labels span:nth-child(2) { width: 30%; }
+  .timeline-labels span:last-child { flex: 1; text-align: right; }
+  
+  /* Comparison */
+  .comparison { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 1.5rem; 
+    margin: 2rem 0; 
+    max-width: 600px; 
+  }
+  .comparison-box { 
+    padding: 1.25rem; 
+    border-radius: 8px; 
+    font-family: 'Lexend Deca', sans-serif; 
+  }
+  .comparison-box h3 { 
+    font-size: 0.82rem; 
+    font-weight: 700; 
+    margin-bottom: 0.6rem; 
+    text-transform: uppercase; 
+    letter-spacing: 0.08em; 
+  }
+  .comparison-box p { 
+    font-size: 0.88rem; 
+    line-height: 1.55; 
+    margin-bottom: 0; 
+    color: inherit; 
+  }
+  .box-problem { 
+    background: #F0EDED; 
+    color: #6B5E5E; 
+    border: 1px solid #D8D0D0; 
+  }
+  .box-solution { 
+    background: var(--teal-light); 
+    color: var(--teal); 
+    border: 1px solid var(--teal); 
+  }
+  
+  /* Pathway diagram */
+  .pathway-row { 
+    display: flex; 
+    align-items: center; 
+    margin: 2rem 0; 
+    max-width: 600px;
+    overflow-x: auto;
+  }
+  .pw-step {
+    flex: 1; 
+    min-width: 0; 
+    height: 72px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    border-radius: 6px; 
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 0.68rem; 
+    font-weight: 600; 
+    text-align: center;
+    padding: 0.35rem 0.2rem; 
+    line-height: 1.25; 
+    border: 2px solid;
+  }
+  .pw-keystone { 
+    flex: 1.2; 
+    height: 76px; 
+    position: relative; 
+  }
+  .pw-arrow { 
+    flex: 0 0 22px; 
+    text-align: center; 
+    color: var(--border); 
+    font-size: 0.85rem; 
+  }
+  .pw-teal { 
+    background: var(--teal-light); 
+    color: var(--teal); 
+    border-color: var(--teal); 
+  }
+  .pw-stone { 
+    background: rgba(139,115,85,0.08); 
+    color: var(--stone); 
+    border-color: var(--stone); 
+  }
+  .pw-copper { 
+    background: var(--copper-bg); 
+    color: var(--copper); 
+    border-color: var(--copper); 
+  }
+  .pw-key { 
+    background: rgba(154,85,48,0.12); 
+    color: var(--copper); 
+    border-color: var(--copper); 
+  }
+  .pw-tag {
+    position: absolute; 
+    bottom: -20px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    font-size: 0.55rem; 
+    color: var(--copper); 
+    background: var(--copper-bg);
+    padding: 0.15rem 0.4rem; 
+    border-radius: 3px; 
+    white-space: nowrap; 
+    border: 1px solid var(--copper);
+  }
+  .pw-label { 
+    font-size: 0.62rem; 
+    line-height: 1.2; 
+  }
+  
+  /* Change stack */
+  .change-row { 
+    display: flex; 
+    gap: 1rem; 
+    align-items: flex-start; 
+    margin-bottom: 1.75rem; 
+  }
+  .change-icon {
+    min-width: 42px; 
+    height: 42px; 
+    border-radius: 50%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-family: 'Lexend Deca', sans-serif; 
+    font-weight: 700; 
+    font-size: 0.85rem; 
+    color: white;
+  }
+  .change-row strong { 
+    font-size: 1rem; 
+    color: var(--text); 
+    display: block; 
+    margin-bottom: 0.2rem; 
+  }
+  .change-row p { 
+    margin-bottom: 0; 
+    font-size: 0.95rem; 
+  }
+  
+  /* Objections */
+  .objection-card { 
+    margin-bottom: 1.5rem; 
+    max-width: 600px; 
+    background: white; 
+    border-radius: 8px; 
+    border: 1px solid var(--border); 
+    overflow: hidden; 
+  }
+  .objection-q {
+    padding: 0.9rem 1.2rem; 
+    background: rgba(139,115,85,0.08);
+    font-weight: 600; 
+    color: var(--text); 
+    font-size: 0.98rem;
+    display: flex; 
+    align-items: center; 
+    gap: 0.6rem;
+  }
+  .q-icon {
+    min-width: 26px; 
+    height: 26px; 
+    border-radius: 50%; 
+    background: var(--stone);
+    color: white; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-family: 'Lexend Deca', sans-serif; 
+    font-size: 0.7rem; 
+    font-weight: 700;
+  }
+  .objection-a { padding: 1rem 1.2rem; }
+  .objection-a p { margin-bottom: 0; font-size: 0.93rem; }
+  
+  /* Ecosystem */
+  .eco-card { 
+    display: flex; 
+    gap: 1.1rem; 
+    align-items: flex-start; 
+    margin-bottom: 1.5rem; 
+    max-width: 600px; 
+  }
+  .eco-icon {
+    min-width: 50px; 
+    height: 50px; 
+    border-radius: 10px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 1.3rem;
+  }
+  .eco-card strong { 
+    font-size: 1rem; 
+    display: block; 
+    margin-bottom: 0.15rem; 
+  }
+  .eco-card strong a { 
+    color: var(--text); 
+    text-decoration: none; 
+  }
+  .eco-card p { 
+    font-size: 0.88rem; 
+    margin-bottom: 0; 
+    line-height: 1.55; 
+  }
+  .eco-connector { 
+    width: 2px; 
+    height: 20px; 
+    background: var(--border); 
+    margin: -0.25rem 0 -0.25rem 24px; 
+  }
+  
+  /* CTA grid */
+  .cta-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 1.1rem; 
+    margin: 2rem 0; 
+    max-width: 600px; 
+  }
+  .cta-card { 
+    padding: 1.1rem; 
+    border-radius: 8px; 
+    border: 1px solid var(--border); 
+    background: white; 
+  }
+  .cta-card h3 { 
+    font-family: 'Lexend Deca', sans-serif; 
+    font-size: 0.73rem; 
+    text-transform: uppercase; 
+    letter-spacing: 0.08em; 
+    color: var(--teal); 
+    margin-bottom: 0.45rem; 
+    font-weight: 700; 
+  }
+  .cta-card p { 
+    font-size: 0.86rem; 
+    margin-bottom: 0; 
+    line-height: 1.5; 
+  }
+  
+  /* Evidence drawer */
+  .evidence-drawer { margin-top: 1.5rem; max-width: 600px; }
+  .evidence-toggle {
+    display: inline-flex; 
+    align-items: center; 
+    gap: 0.4rem;
+    font-family: 'Lexend Deca', sans-serif; 
+    font-size: 0.73rem; 
+    letter-spacing: 0.05em;
+    color: var(--text-soft); 
+    background: none; 
+    border: 1px solid var(--border);
+    border-radius: 4px; 
+    padding: 0.45rem 0.8rem; 
+    cursor: pointer; 
+    text-transform: uppercase; 
+    font-weight: 600;
+  }
+  .evidence-toggle:hover { background: var(--bg); }
+  .evidence-toggle .chevron { display: inline-block; font-size: 0.6rem; }
+  .evidence-content {
+    display: none; 
+    margin-top: 1rem; 
+    padding: 1.1rem;
+    background: rgba(255,255,255,0.7); 
+    border: 1px solid var(--border); 
+    border-radius: 6px;
+    font-size: 0.78rem; 
+    line-height: 1.65; 
+    color: var(--text-soft); 
+    font-family: 'Lexend Deca', sans-serif;
+  }
+  .evidence-content.open { display: block; }
+  .evidence-content cite { 
+    font-style: normal; 
+    display: block; 
+    margin-top: 0.5rem; 
+    font-size: 0.7rem; 
+    color: var(--text-muted); 
+  }
+  .evidence-content p { 
+    font-size: 0.78rem; 
+    margin-bottom: 0.6rem; 
+  }
+  .evidence-content p:last-child { margin-bottom: 0; }
+  
+  /* Scenario box */
+  .scenario { 
+    background: white; 
+    border: 1px solid var(--border); 
+    border-radius: 8px; 
+    padding: 1.4rem; 
+    margin: 1.5rem 0; 
+    max-width: 600px; 
+  }
+  .scenario-label { 
+    font-family: 'Lexend Deca', sans-serif; 
+    font-size: 0.68rem; 
+    text-transform: uppercase; 
+    letter-spacing: 0.12em; 
+    color: var(--copper); 
+    font-weight: 700; 
+    margin-bottom: 0.7rem; 
+  }
+  .scenario p { 
+    font-size: 0.95rem; 
+    color: var(--text); 
+  }
+  
+  /* POC box */
+  .poc-box { 
+    max-width: 600px; 
+    margin: 2rem 0; 
+    padding: 1.2rem 1.4rem; 
+    border-radius: 8px; 
+    border: 2px solid var(--copper); 
+    background: white; 
+  }
+  .poc-box p { 
+    font-size: 0.9rem; 
+    color: var(--text); 
+    margin-bottom: 0; 
+    line-height: 1.6; 
+  }
+  .poc-label { 
+    font-family: 'Lexend Deca', sans-serif; 
+    font-size: 0.66rem; 
+    text-transform: uppercase; 
+    letter-spacing: 0.12em; 
+    color: var(--copper); 
+    font-weight: 700; 
+    margin-bottom: 0.5rem; 
+  }
+  
+  /* Legend */
+  .strand-legend-paper { 
+    display: flex; 
+    gap: 1.5rem; 
+    margin: 1.5rem 0; 
+    flex-wrap: wrap; 
+    justify-content: center;
+  }
+  .legend-item { 
+    display: flex; 
+    align-items: center; 
+    gap: 0.5rem; 
+    font-family: 'Lexend Deca', sans-serif; 
+    font-size: 0.78rem; 
+    color: var(--text-soft); 
+  }
+  .legend-swatch { 
+    width: 14px; 
+    height: 14px; 
+    border-radius: 3px; 
+  }
+  
+  /* Progress bar */
+  .progress-bar {
+    position: fixed; 
+    top: 61px; 
+    left: 0; 
+    right: 0;
+    display: flex; 
+    justify-content: center; 
+    gap: 0.5rem; 
+    padding: 1rem;
+    z-index: 90; 
+    background: rgba(245,240,232,0.92); 
+    border-bottom: 1px solid var(--border);
+  }
+  .progress-dot { 
+    width: 10px; 
+    height: 10px; 
+    border-radius: 50%; 
+    border: 2px solid var(--border); 
+    background: transparent; 
+  }
+  .progress-dot.active { 
+    background: var(--text); 
+    border-color: var(--text); 
+  }
+  
+  .nav-hint { 
+    font-family: 'Lexend Deca', sans-serif; 
+    font-size: 0.72rem; 
+    color: var(--text-muted); 
+    text-transform: uppercase; 
+    letter-spacing: 0.1em; 
+    margin-top: 2rem; 
+  }
+  
+  .paper-footer {
+    background: var(--bg); 
+    padding: 3rem 2rem; 
+    text-align: center;
+    font-family: 'Lexend Deca', sans-serif; 
+    font-size: 0.78rem; 
+    color: var(--text-soft); 
+    line-height: 1.8;
+  }
+  .paper-footer a { 
+    color: var(--teal); 
+    text-decoration: none; 
+  }
+  .paper-footer a:hover { text-decoration: underline; }
+  
+  @media (max-width: 640px) {
+    .spread { padding: 2.5rem 1.25rem; }
+    .spread h1 { font-size: 1.8rem; }
+    .spread h2 { font-size: 1.3rem; }
+    .comparison, .cta-grid { grid-template-columns: 1fr; }
+    .pw-step { font-size: 0.52rem; height: 62px; }
+    .pw-keystone { height: 66px; }
+    .pw-arrow { flex: 0 0 14px; font-size: 0.7rem; }
+    .pw-tag { font-size: 0.48rem; bottom: -16px; }
+    .strand-teal, .strand-copper, .strand-stone, .strand-keystone { padding-left: 1rem; }
+  }
+  
+  @media print {
+    .spread { min-height: auto; page-break-inside: avoid; padding: 2rem 1rem; }
+    .progress-bar { display: none; }
+    .evidence-content { display: block !important; }
+    .evidence-toggle { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div id="lk-nav"></div>
+<div id="lk-mobile-menu"></div>
+
+<nav class="progress-bar" aria-label="Reading progress">
+  <div class="progress-dot active"></div><div class="progress-dot"></div><div class="progress-dot"></div>
+  <div class="progress-dot"></div><div class="progress-dot"></div><div class="progress-dot"></div>
+  <div class="progress-dot"></div><div class="progress-dot"></div><div class="progress-dot"></div>
+</nav>
+
+<!-- COVER -->
+<section class="spread" id="cover" data-index="0">
+  <div class="spread-inner" style="text-align:center;padding-top:2rem;">
+    <div class="section-label label-teal" style="margin-bottom:1.5rem;">A position paper from LightKey.org</div>
+    <h1 style="max-width:520px;margin:0 auto 1.5rem;">When the Pathway <em>Is</em> the Barrier</h1>
+    <p class="lead" style="max-width:480px;margin:0 auto 2.5rem;text-align:center;">
+      Australian law gives you rights.<br>But if you cannot see the path to use them,<br>do you really have them?
+    </p>
+    <svg width="220" height="160" viewBox="0 0 220 160" style="margin:0 auto 2rem;display:block;" aria-label="LightKey archway">
+      <path d="M 40 150 L 40 70 Q 40 20, 110 16 Q 180 20, 180 70 L 180 150" stroke="#5C4D3A" stroke-width="2.5" fill="none"/>
+      <line x1="62" y1="46" x2="54" y2="62" stroke="#5C4D3A" stroke-width="0.8" opacity="0.25"/>
+      <line x1="158" y1="46" x2="166" y2="62" stroke="#5C4D3A" stroke-width="0.8" opacity="0.25"/>
+      <path d="M 98 16 L 100 6 L 120 6 L 122 16" stroke="#9A5530" stroke-width="2" fill="rgba(154,85,48,0.12)"/>
+      <circle cx="110" cy="9" r="1.5" fill="#9A5530"/>
+      <line x1="110" y1="10.5" x2="110" y2="14" stroke="#9A5530" stroke-width="1.2"/>
+      <line x1="40" y1="150" x2="180" y2="150" stroke="#5C4D3A" stroke-width="2.5"/>
+      <line x1="56" y1="148" x2="164" y2="148" stroke="#3D7A8A" stroke-width="1" opacity="0.45"/>
+    </svg>
+    <div class="strand-legend-paper" style="justify-content:center;margin-bottom:2rem;">
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--teal);"></div> Right</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--copper);"></div> Timeline</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--stone);"></div> Decision</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--copper);"></div> Key step</div>
+    </div>
+    <p style="font-size:0.85rem;color:var(--text-muted);text-align:center;max-width:400px;margin:0 auto;">
+      Jay Spudvilas · February 2026<br>
+      LightKey is a <a href="https://glasscase.org" style="color:var(--teal);text-decoration:none;">GlassCase.org</a> initiative
+    </p>
+    <div class="nav-hint" style="text-align:center;">Scroll to read ↓</div>
+  </div>
+</section>
+
+<!-- SPREAD 2: PROBLEM -->
+<section class="spread strand-teal bg-teal" id="problem" data-index="1">
+  <div class="spread-inner">
+    <div class="section-label label-teal">The problem · Right</div>
+    <h2>You have the right to see government documents. You have the right to appeal decisions. You have the right to review.</h2>
+    <p class="lead">These rights are real. They are written into Australian law. The system is designed to protect you.</p>
+    <div class="scattered-visual">
+      <span class="scattered-chip chip-faded">FOI Act 1982</span>
+      <span class="scattered-chip chip-faded">Agency website</span>
+      <span class="scattered-chip chip-faded">Practice direction</span>
+      <span class="scattered-chip chip-faded">AAT rules</span>
+      <span class="scattered-chip chip-faded">IC guidelines</span>
+      <span class="scattered-chip chip-faded">Ministerial direction</span>
+      <span class="scattered-chip chip-faded">Tribunal procedure</span>
+      <span class="scattered-chip chip-found">Where do I start?</span>
+    </div>
+    <p>The steps to use these rights are scattered across different Acts, agency websites, tribunal rules, and practice directions. No single place shows you the full path from start to finish.</p>
+    <p>If you already know how government works — if you have a lawyer, or you work in the system — you can find your way. If you do not, the path is hidden.</p>
+    <p>This is not a gap in the law. The law works. It is a gap in the <strong>map</strong>.</p>
+    <div class="evidence-drawer">
+      <button class="evidence-toggle" onclick="toggleEvidence(this)" aria-expanded="false"><span class="chevron">▶</span> Evidence &amp; sources</button>
+      <div class="evidence-content">
+        <p>The FOI Act 1982 (Cth) gives every person the right to access government documents (s 11). The AAT Act 1975 (Cth) provides merits review. Judicial review is available under the ADJR Act 1977 (Cth).</p>
+        <p>These pathways are distributed across separate legislative instruments, agency-specific guidelines, and tribunal practice directions. The ALRC and Law Council of Australia's Justice Project (2018) have identified legal complexity and cognitive accessibility as barriers.</p>
+        <cite>FOI Act 1982 (Cth); ALRC Access to Justice reports; Law Council of Australia, The Justice Project (2018).</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPREAD 3: SCENARIO -->
+<section class="spread strand-copper bg-copper" id="scenario" data-index="2">
+  <div class="spread-inner">
+    <div class="section-label label-copper">What it looks like · Timeline</div>
+    <h2>Imagine you asked for government documents. Sixty days pass. You hear nothing.</h2>
+    <div class="timeline-visual">
+      <div class="timeline-track">
+        <div class="timeline-segment seg-legal">30 days<br><span style="font-weight:400;font-size:0.6rem;">legal limit</span></div>
+        <div class="timeline-segment seg-breach">+30 days<br><span style="font-weight:400;font-size:0.6rem;">breach</span></div>
+        <div class="timeline-segment seg-invisible">you don't<br>know this</div>
+      </div>
+      <div class="timeline-labels">
+        <span>← Agency must decide</span>
+        <span>← You can complain</span>
+        <span>← Invisible to you</span>
+      </div>
+    </div>
+    <div class="scenario">
+      <div class="scenario-label">A common experience</div>
+      <p>You submitted an FOI request. The law says the agency has 30 days to respond. It has been 60 days. You have heard nothing.</p>
+      <p>You have the right to complain to the Information Commissioner. But you do not know this. The agency knows the deadline. They know you probably do not.</p>
+      <p style="margin-bottom:0;">So the delay is low risk for them and high cost for you.</p>
+    </div>
+    <p>The <strong>timeline is invisible</strong> to the person it affects. If you cannot see the timeline, you cannot see the breach. And if you cannot see the breach, you cannot use the remedy.</p>
+    <div class="evidence-drawer">
+      <button class="evidence-toggle" onclick="toggleEvidence(this)" aria-expanded="false"><span class="chevron">▶</span> Evidence &amp; sources</button>
+      <div class="evidence-content">
+        <p>OAIC annual reports show that a significant proportion of FOI requests exceed statutory timeframes. The 30-day period: s 15(5)(b) FOI Act 1982. IC review: s 54L (deemed refusal).</p>
+        <p>Cognitive load theory (Sweller, 1988) explains why fragmented information environments increase extraneous load.</p>
+        <cite>FOI Act 1982 (Cth) ss 15(5)(b), 54L; OAIC Annual Reports; Sweller (1988).</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPREAD 4: GAP -->
+<section class="spread strand-stone bg-stone" id="gap" data-index="3">
+  <div class="spread-inner">
+    <div class="section-label label-stone">The gap · Decision</div>
+    <h2>The system follows the rules. But following the rules is not the same as being fair.</h2>
+    <div class="comparison">
+      <div class="comparison-box box-problem">
+        <h3>What happens now</h3>
+        <p>Agencies process your request. They send a decision letter. They list review options in legal language at the bottom. They have followed the rules.</p>
+      </div>
+      <div class="comparison-box box-solution">
+        <h3>What is missing</h3>
+        <p>You can see where you are. You know the timeline. You can tell when something has gone wrong. You know what to do next.</p>
+      </div>
+    </div>
+    <p>This gap has a name. In corporate supply chains, it is called <strong>compliance theatre</strong> — when organisations follow the reporting rules without creating real visibility for the people affected.</p>
+    <p>The same pattern appears in administrative law. Agencies comply with the FOI Act. But if the people affected cannot navigate the pathway, compliance does not produce accountability. It produces the <em>appearance</em> of accountability.</p>
+    <div class="evidence-drawer">
+      <button class="evidence-toggle" onclick="toggleEvidence(this)" aria-expanded="false"><span class="chevron">▶</span> Evidence &amp; sources</button>
+      <div class="evidence-content">
+        <p>Nolan &amp; Frishling (2019) document how the Modern Slavery Act 2018 (Cth) produces formal compliance without meaningful visibility for affected workers.</p>
+        <p>See also Locke (2013) on the limits of private auditing in supply chain governance.</p>
+        <cite>Nolan &amp; Frishling (2019); Locke (2013); Modern Slavery Act 2018 (Cth).</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPREAD 5: THESIS -->
+<section class="spread strand-keystone bg-keystone" id="thesis" data-index="4">
+  <div class="spread-inner">
+    <div class="section-label label-keystone">The argument · Keystone</div>
+    <h2>When people can see the path, three things change.</h2>
+    <div style="max-width:600px;margin:2rem 0;">
+      <div class="change-row">
+        <div class="change-icon" style="background:var(--teal);">1</div>
+        <div><strong>Gaps become visible.</strong><p>If you can see the 30-day timeline, you can see when it has been broken.</p></div>
+      </div>
+      <div class="change-row">
+        <div class="change-icon" style="background:var(--copper);">2</div>
+        <div><strong>Accountability becomes possible.</strong><p>You can now lodge a complaint — not because the system changed, but because you can see it.</p></div>
+      </div>
+      <div class="change-row">
+        <div class="change-icon" style="background:var(--stone);">3</div>
+        <div><strong>Patterns become mappable.</strong><p>When many people can see the path, data emerges. Where do delays cluster? Where does discretion go undocumented?</p></div>
+      </div>
+    </div>
+    <div class="pull-quote">Accessibility is not just about helping individuals navigate. It generates the conditions under which enforcement mechanisms actually work.</div>
+    <p><strong>Legibility is not a feature of good governance. It is a precondition for it.</strong></p>
+  </div>
+</section>
+
+<!-- SPREAD 6: DESIGN -->
+<section class="spread strand-teal" id="design" data-index="5">
+  <div class="spread-inner">
+    <div class="section-label label-teal">How LightKey works · Design</div>
+    <h2>Complexity stays. Overwhelm doesn't.</h2>
+    <p class="lead">Administrative law is genuinely complex. Multiple pathways. Conditional timelines. Discretionary decisions. LightKey does not hide this complexity. It makes it navigable.</p>
+    <div class="pathway-row" style="margin-bottom:3rem;">
+      <div class="pw-step pw-teal">
+        <span class="pw-label">Identify<br>your right</span>
+      </div>
+      <div class="pw-arrow">→</div>
+      <div class="pw-step pw-stone">
+        <span class="pw-label">Prepare<br>request</span>
+      </div>
+      <div class="pw-arrow">→</div>
+      <div class="pw-step pw-key pw-keystone">
+        <span class="pw-label">Lodge with<br>agency</span>
+        <span class="pw-tag">⬥ 30 days</span>
+      </div>
+      <div class="pw-arrow">→</div>
+      <div class="pw-step pw-copper">
+        <span class="pw-label">Agency<br>decision</span>
+      </div>
+      <div class="pw-arrow">→</div>
+      <div class="pw-step pw-stone">
+        <span class="pw-label">Review<br>options</span>
+      </div>
+    </div>
+    <p style="font-size:0.88rem;color:var(--text-soft);margin-bottom:2rem;">
+      The FOI pathway on <a href="/" style="color:var(--teal);">lightkey.org</a>. Five steps. One keystone. Two choice points. Strand-coded throughout.
+    </p>
+    <p>This is not "dumbing down" the law. It is applying what we know about how people process information to a domain that has ignored it.</p>
+    <div class="evidence-drawer">
+      <button class="evidence-toggle" onclick="toggleEvidence(this)" aria-expanded="false"><span class="chevron">▶</span> Evidence &amp; sources</button>
+      <div class="evidence-content">
+        <p>Sweller's cognitive load theory distinguishes intrinsic load (inherent complexity) from extraneous load (poor presentation). LightKey reduces extraneous load while preserving intrinsic complexity.</p>
+        <p>WCAG 2.1, particularly the "understandable" principle, provides the accessibility foundation. Universal design holds that design for people with disability produces better outcomes for everyone.</p>
+        <cite>Sweller (1988; 2011); WCAG 2.1; Centre for Universal Design principles.</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPREAD 7: COUNTERARGUMENTS -->
+<section class="spread strand-stone bg-cream" id="objections" data-index="6">
+  <div class="spread-inner">
+    <div class="section-label label-stone">But what about... · Testing the argument</div>
+    <h2>Three honest objections.</h2>
+    <div class="objection-card">
+      <div class="objection-q"><div class="q-icon">Q</div> "Legal aid already does this."</div>
+      <div class="objection-a"><p>Legal aid gives advice and representation. It is essential — and underfunded. LightKey does not replace legal advice. It helps people see the map <em>before</em> crisis, so they know when they need a lawyer and what kind. Legibility tools and legal aid work together.</p></div>
+    </div>
+    <div class="objection-card">
+      <div class="objection-q"><div class="q-icon">Q</div> "Won't this encourage bad-faith complaints?"</div>
+      <div class="objection-a"><p>This assumes complexity is a useful filter. It is not. Complexity filters for procedural knowledge — not merit. That correlates with education and resources, not the strength of a case. If legibility increases complaints, that tells us existing numbers undercount real grievances.</p></div>
+    </div>
+    <div class="objection-card">
+      <div class="objection-q"><div class="q-icon">Q</div> "People might think they don't need a lawyer."</div>
+      <div class="objection-a"><p>A real concern. LightKey addresses it: pathway guides note where professional advice matters. The design principle is <em>navigability</em>, not self-sufficiency. You should be able to see the map. That does not mean you walk the terrain alone.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SPREAD 8: ECOSYSTEM -->
+<section class="spread strand-teal bg-teal" id="ecosystem" data-index="7">
+  <div class="spread-inner">
+    <div class="section-label label-teal">The bigger picture · Where LightKey sits</div>
+    <h2>LightKey is part of something larger.</h2>
+    <div class="eco-card">
+      <div class="eco-icon" style="background:#1A1F2E;border-radius:10px;padding:6px;">
+        <svg width="36" height="36" viewBox="0 0 80 80" fill="none"><defs><linearGradient id="gp" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E8F4F8" stop-opacity="0.9"/><stop offset="50%" stop-color="#4A9FD8" stop-opacity="0.7"/><stop offset="100%" stop-color="#3ABEF9" stop-opacity="0.9"/></linearGradient></defs><g transform="translate(-7,0)"><line x1="8" y1="40" x2="30" y2="40" stroke="rgba(255,255,255,0.5)" stroke-width="2" opacity="0.6"/><path d="M 30 20 L 45 40 L 30 60 Z" fill="url(#gp)" stroke="#4A9FD8" stroke-width="1"/><line x1="45" y1="40" x2="72" y2="28" stroke="#4A9FD8" stroke-width="2" opacity="0.85"/><line x1="45" y1="40" x2="72" y2="40" stroke="#3ABEF9" stroke-width="2.5" opacity="0.9"/><line x1="45" y1="40" x2="72" y2="52" stroke="#F4C430" stroke-width="2" opacity="0.85"/></g></svg>
+      </div>
+      <div><strong><a href="https://glasscase.org">GlassCase.org</a> · The diagnostic layer</strong><p>Open tools that map how administrative decisions are made — where discretion lives, where delays cluster, where redactions are applied. For researchers and oversight bodies.</p></div>
+    </div>
+    <div class="eco-connector"></div>
+    <div class="eco-card">
+      <div class="eco-icon" style="background:var(--bg);border-radius:10px;padding:4px;">
+        <svg width="38" height="38" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" fill="none"/><path d="M6 32 L6 18 Q6 6 18 6 Q30 6 30 18 L30 32" stroke="#5C4D3A" stroke-width="1.5" fill="none"/><path d="M14 6 L15 2 L21 2 L22 6" stroke="#9A5530" stroke-width="1.5" fill="rgba(154,85,48,0.15)"/><circle cx="18" cy="3.5" r="0.8" fill="#9A5530"/><line x1="18" y1="4.3" x2="18" y2="5.5" stroke="#9A5530" stroke-width="0.8"/><line x1="6" y1="32" x2="30" y2="32" stroke="#5C4D3A" stroke-width="1.5"/><line x1="10" y1="31" x2="26" y2="31" stroke="#3D7A8A" stroke-width="0.6" opacity="0.5"/></svg>
+      </div>
+      <div><strong><a href="https://lightkey.org">LightKey.org</a> · The public layer</strong><p>Step-by-step pathway guides for people who move through administrative systems. Designed for cognitive accessibility. Especially for people who process information differently.</p></div>
+    </div>
+    <div class="eco-connector"></div>
+    <div class="eco-card">
+      <div class="eco-icon" style="background:var(--copper-bg);border-radius:10px;padding:4px;">
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none"><line x1="19" y1="8" x2="19" y2="30" stroke="#9A5530" stroke-width="1.5"/><line x1="8" y1="14" x2="30" y2="14" stroke="#9A5530" stroke-width="1.5"/><circle cx="8" cy="14" r="2.5" fill="rgba(154,85,48,0.15)" stroke="#9A5530" stroke-width="1"/><circle cx="30" cy="14" r="2.5" fill="rgba(154,85,48,0.15)" stroke="#9A5530" stroke-width="1"/><line x1="14" y1="30" x2="24" y2="30" stroke="#9A5530" stroke-width="1.5"/></svg>
+      </div>
+      <div><strong><a href="https://jayspudvilas.com">Fairness by Design</a> · The founding principle</strong><p>Process design shapes fairness outcomes. Making process visible is a precondition for making it fair. Jay Spudvilas · ANU Juris Doctor (2026–2028).</p></div>
+    </div>
+    <p style="margin-top:2rem;"><strong>Transparency that only serves professionals is incomplete.</strong></p>
+  </div>
+</section>
+
+<!-- SPREAD 9: ACTION -->
+<section class="spread strand-keystone bg-keystone" id="action" data-index="8">
+  <div class="spread-inner">
+    <div class="section-label label-keystone">What needs to happen · Action</div>
+    <h2>Legibility is not a nice-to-have. It is infrastructure.</h2>
+    <div class="cta-grid">
+      <div class="cta-card"><h3>Policymakers</h3><p>Require agencies to publish navigable pathway guides alongside legislation — not as PDFs buried in footers, but as structured, accessible resources.</p></div>
+      <div class="cta-card"><h3>Legal aid &amp; advocacy</h3><p>Build legibility into intake. Clients should arrive with orientation, not just distress. Pathway guides and legal advice work together.</p></div>
+      <div class="cta-card"><h3>Accessibility advocates</h3><p>"Access to justice" must include cognitive accessibility of legal pathways — not just physical accessibility of courtrooms.</p></div>
+      <div class="cta-card"><h3>Researchers</h3><p>Study the link between pathway legibility and enforcement outcomes. If legibility increases complaints, that is data about suppressed demand.</p></div>
+    </div>
+    <div class="poc-box">
+      <div class="poc-label">You are reading the proof of concept</div>
+      <p>This paper uses the same design it argues for. One idea per section. Strand-coded. Warm palette. No animations. Evidence available but not blocking the path. If this was clear to read, the argument holds.</p>
+    </div>
+    <p style="text-align:center;font-size:1.05rem;color:var(--text);margin-top:2rem;"><strong>Fairness by design. Making integrity visible.</strong></p>
+  </div>
+</section>
+
+<footer class="paper-footer">
+  <p><strong>LightKey.org</strong> · A <a href="https://glasscase.org">GlassCase.org</a> initiative<br>
+  Built by <a href="https://jayspudvilas.com">Jay Spudvilas</a> · ANU Juris Doctor (2026–2028)<br>ORCID: 0009-0000-0945-0380</p>
+  <p style="margin-top:1rem;font-size:0.7rem;color:var(--text-muted);">
+    This document is information only, not legal advice.<br>
+    Developed through structured consultation with accessibility advocates,<br>
+    neurodivergent people, and legal practitioners.<br>February 2026 · Version 1.0
+  </p>
+</footer>
+
+<div id="lk-footer"></div>
+
+<script>
+function toggleEvidence(btn){
+  const c=btn.nextElementSibling,ch=btn.querySelector('.chevron'),o=c.classList.toggle('open');
+  ch.textContent=o?'▼':'▶';btn.setAttribute('aria-expanded',o);
+}
+const spreads=document.querySelectorAll('.spread'),dots=document.querySelectorAll('.progress-dot');
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){
+    const i=parseInt(e.target.dataset.index);
+    dots.forEach((d,j)=>d.classList.toggle('active',j<=i));
+  }});
+},{threshold:0.4});
+spreads.forEach(s=>obs.observe(s));
+</script>
+
+<script src="/js/main.js?v=20260219"></script>
+<script src="/js/components.js?v=20260219"></script>
+
+</body>
+</html>

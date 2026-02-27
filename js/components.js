@@ -35,6 +35,7 @@ const LK = {
             <span class="lk-nav-future">Pathways <span class="lk-nav-badge">Building</span></span>
             <span class="lk-nav-future">Guides <span class="lk-nav-badge">Building</span></span>
             <span class="lk-nav-future">About <span class="lk-nav-badge">Building</span></span>
+            <a href="/position.html" data-nav="position">Position Paper</a>
             <a href="/legal/" data-nav="legal">Use &amp; Privacy</a>
           </nav>
           <button class="lk-a11y-toggle" id="lkReadingToggle"
@@ -63,6 +64,7 @@ const LK = {
         <span class="lk-mobile-future">Pathways <span class="lk-nav-badge">Building</span></span>
         <span class="lk-mobile-future">Guides <span class="lk-nav-badge">Building</span></span>
         <span class="lk-mobile-future">About <span class="lk-nav-badge">Building</span></span>
+        <a href="/position.html" data-nav="position">Position Paper</a>
         <a href="/legal/" data-nav="legal">Use &amp; Privacy</a>
       </nav>
     </div>
@@ -103,6 +105,7 @@ function lkSetActiveNav() {
   else if (path.startsWith('/guides'))    key = 'guides';
   else if (path.startsWith('/about'))     key = 'about';
   else if (path.startsWith('/resources')) key = 'resources';
+  else if (path.startsWith('/position'))  key = 'position';
   else if (path.startsWith('/legal'))     key = 'legal';
 
   document.querySelectorAll('[data-nav="' + key + '"]').forEach(function(el) {
