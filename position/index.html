@@ -633,12 +633,6 @@
 <div id="lk-nav"></div>
 <div id="lk-mobile-menu"></div>
 
-<nav class="progress-bar" aria-label="Reading progress">
-  <div class="progress-dot active"></div><div class="progress-dot"></div><div class="progress-dot"></div>
-  <div class="progress-dot"></div><div class="progress-dot"></div><div class="progress-dot"></div>
-  <div class="progress-dot"></div><div class="progress-dot"></div><div class="progress-dot"></div>
-</nav>
-
 <!-- COVER -->
 <section class="spread" id="cover" data-index="0">
   <div class="spread-inner" style="text-align:center;padding-top:2rem;">
@@ -906,14 +900,6 @@ function toggleEvidence(btn){
   const c=btn.nextElementSibling,ch=btn.querySelector('.chevron'),o=c.classList.toggle('open');
   ch.textContent=o?'▼':'▶';btn.setAttribute('aria-expanded',o);
 }
-const spreads=document.querySelectorAll('.spread'),dots=document.querySelectorAll('.progress-dot');
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){
-    const i=parseInt(e.target.dataset.index);
-    dots.forEach((d,j)=>d.classList.toggle('active',j<=i));
-  }});
-},{threshold:0.4});
-spreads.forEach(s=>obs.observe(s));
 </script>
 
 <script src="/js/main.js?v=20260219"></script>
