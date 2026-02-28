@@ -162,14 +162,14 @@
   .strand-teal { border-left: 5px solid var(--teal); padding-left: 2rem; padding-right: 2rem; }
   .strand-copper { border-left: 5px solid var(--copper); padding-left: 2rem; padding-right: 2rem; }
   .strand-stone { border-left: 5px solid var(--stone); padding-left: 2rem; padding-right: 2rem; }
-  .strand-keystone { border-left: 5px solid var(--copper); padding-left: 2rem; padding-right: 2rem; }
+  .strand-keystone { border-left: 5px solid var(--strand-keystone); padding-left: 2rem; padding-right: 2rem; }
   
   /* Backgrounds */
   .bg-cream { background: var(--bg); }
   .bg-teal { background: var(--teal-light); }
   .bg-copper { background: var(--copper-bg); }
   .bg-stone { background: rgba(139,115,85,0.08); }
-  .bg-keystone { background: rgba(154,85,48,0.12); }
+  .bg-keystone { background: var(--strand-keystone-bg); }
   
   /* Typography */
   .spread h1 { 
@@ -203,7 +203,7 @@
   .label-teal { color: var(--teal); }
   .label-copper { color: var(--copper); }
   .label-stone { color: var(--stone); }
-  .label-keystone { color: var(--copper); }
+  .label-keystone { color: var(--strand-keystone); }
   
   .spread p { 
     font-size: 1.05rem; 
@@ -396,9 +396,9 @@
     border-color: var(--strand-timeline); 
   }
   .pw-key { 
-    background: rgba(154,85,48,0.12); 
-    color: var(--strand-timeline); 
-    border-color: var(--strand-timeline); 
+    background: var(--strand-keystone-bg); 
+    color: var(--strand-keystone); 
+    border-color: var(--strand-keystone); 
   }
   .pw-tag {
     position: absolute; 
@@ -406,12 +406,12 @@
     left: 50%; 
     transform: translateX(-50%);
     font-size: 0.55rem; 
-    color: var(--copper); 
-    background: var(--copper-bg);
+    color: var(--strand-keystone); 
+    background: var(--strand-keystone-bg);
     padding: 0.15rem 0.4rem; 
     border-radius: 3px; 
     white-space: nowrap; 
-    border: 1px solid var(--copper);
+    border: 1px solid var(--strand-keystone);
   }
   .pw-label { 
     font-size: 0.62rem; 
@@ -789,7 +789,7 @@
       <div class="legend-item"><div class="legend-swatch" style="background:var(--teal);"></div> Right</div>
       <div class="legend-item"><div class="legend-swatch" style="background:var(--copper);"></div> Timeline</div>
       <div class="legend-item"><div class="legend-swatch" style="background:var(--stone);"></div> Decision</div>
-      <div class="legend-item"><div class="legend-swatch" style="background:var(--copper);"></div> Key step</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--strand-keystone);"></div> Keystone</div>
     </div>
     <p style="font-size:0.85rem;color:var(--text-muted);text-align:center;max-width:400px;margin:0 auto;">
       LightKey · A <a href="https://glasscase.org" style="color:var(--teal);text-decoration:none;">GlassCase.org</a> initiative<br>
@@ -797,7 +797,8 @@
     </p>
 
     <div class="pdf-downloads" aria-label="Download position paper PDF">
-      <a class="pdf-btn" href="/position/LightKey_Position_Paper.pdf" download>Download PDF</a>
+      <a class="pdf-btn" href="/position/LightKey_Position_Paper.pdf" download>Download PDF (Light)</a>
+      <a class="pdf-btn" href="/position/LightKey_Position_Paper_Dark.pdf" download>Download PDF (Dark)</a>
     </div>
 
     <div class="nav-hint" style="text-align:center;">Scroll to read ↓</div>
@@ -811,13 +812,13 @@
     <h2><strong>You have the right to access government documents. To appeal administrative decisions. To seek review.</strong></h2>
     <p class="lead">These rights are real. They are written into Australian law. The system is designed to protect you.</p>
     <div class="scattered-visual">
-      <span class="scattered-chip chip-faded">FOI Act 1982</span>
+      <span class="scattered-chip chip-faded">Freedom of Information (FOI) Act 1982</span>
       <span class="scattered-chip chip-faded">Agency website</span>
       <span class="scattered-chip chip-faded">Practice direction</span>
       <span class="scattered-chip chip-faded">Tribunal rules</span>
       <span class="scattered-chip chip-faded">IC guidelines</span>
       <span class="scattered-chip chip-faded">Ministerial direction</span>
-      <span class="scattered-chip chip-faded">ADJR Act 1977</span>
+      <span class="scattered-chip chip-faded">Administrative Decisions (Judicial Review) (ADJR) Act 1977</span>
       <span class="scattered-chip chip-found">Where do I start?</span>
     </div>
     <p>The steps to use these rights are scattered across different laws, agency websites, tribunal rules, and internal guidelines. No single place shows you the full path from start to finish.</p>
@@ -827,7 +828,7 @@
       <button class="evidence-toggle" onclick="toggleEvidence(this)" aria-expanded="false"><span class="chevron">▶</span> Evidence &amp; sources</button>
       <div class="evidence-content">
         <p>The <a href="https://www.legislation.gov.au/Series/C2004A02562" target="_blank" rel="noopener">FOI Act 1982 (Cth)</a> gives every person the right to access government documents (s 11). The <a href="https://www.legislation.gov.au/Details/C2022C00224" target="_blank" rel="noopener">AAT Act 1975 (Cth)</a> provides merits review. Judicial review is available under the <a href="https://www.legislation.gov.au/Current/C2015C00006" target="_blank" rel="noopener">ADJR Act 1977 (Cth)</a>.</p>
-        <p>These pathways are spread across separate laws, agency guidance, and tribunal rules. The <a href="https://www.alrc.gov.au/" target="_blank" rel="noopener">ALRC</a> and <a href="https://lawcouncil.au/justice-project" target="_blank" rel="noopener">Law Council of Australia's Justice Project (2018)</a> identify legal complexity and hard-to-follow information as barriers.</p>
+        <p>These pathways are spread across separate laws, agency guidance, and tribunal rules. The <a href="https://www.alrc.gov.au/" target="_blank" rel="noopener">Australian Law Reform Commission (ALRC)</a> and <a href="https://lawcouncil.au/justice-project" target="_blank" rel="noopener">Law Council of Australia's Justice Project (2018)</a> identify legal complexity and hard-to-follow information as barriers.</p>
         <cite><a href="https://www.legislation.gov.au/Series/C2004A02562" target="_blank" rel="noopener">FOI Act 1982 (Cth)</a>; <a href="https://www.alrc.gov.au/" target="_blank" rel="noopener">ALRC Access to Justice reports</a>; <a href="https://lawcouncil.au/justice-project" target="_blank" rel="noopener">Law Council of Australia, The Justice Project (2018)</a>.</cite>
       </div>
     </div>
@@ -861,7 +862,7 @@
     <div class="evidence-drawer">
       <button class="evidence-toggle" onclick="toggleEvidence(this)" aria-expanded="false"><span class="chevron">▶</span> Evidence &amp; sources</button>
       <div class="evidence-content">
-        <p><a href="https://www.oaic.gov.au/about-the-OAIC/our-corporate-information/oaic-annual-reports" target="_blank" rel="noopener">OAIC annual reports</a> show that a significant proportion of FOI requests exceed statutory timeframes. The 30-day period: s 15(5)(b) <a href="https://www.legislation.gov.au/Series/C2004A02562" target="_blank" rel="noopener">FOI Act 1982</a>. Deemed refusal when no decision is made: s 15AC. IC review: s 54L.</p>
+        <p><a href="https://www.oaic.gov.au/about-the-OAIC/our-corporate-information/oaic-annual-reports" target="_blank" rel="noopener">Office of the Australian Information Commissioner (OAIC) annual reports</a> show that a significant proportion of FOI requests exceed statutory timeframes. The 30-day period: s 15(5)(b) <a href="https://www.legislation.gov.au/Series/C2004A02562" target="_blank" rel="noopener">FOI Act 1982</a>. Deemed refusal when no decision is made: s 15AC. IC review: s 54L.</p>
         <p>Cognitive load theory (<a href="https://www.sciencedirect.com/science/article/abs/pii/0364021388900237" target="_blank" rel="noopener">Sweller, 1988</a>) explains why fragmented information environments increase extraneous load.</p>
         <cite><a href="https://www.legislation.gov.au/Series/C2004A02562" target="_blank" rel="noopener">FOI Act 1982 (Cth)</a> ss 15(5)(b), 15AC, 54L; <a href="https://www.oaic.gov.au/about-the-OAIC/our-corporate-information/oaic-annual-reports" target="_blank" rel="noopener">OAIC Annual Reports</a>; <a href="https://www.sciencedirect.com/science/article/abs/pii/0364021388900237" target="_blank" rel="noopener">Sweller (1988)</a>.</cite>
       </div>
@@ -889,9 +890,9 @@
     <div class="evidence-drawer">
       <button class="evidence-toggle" onclick="toggleEvidence(this)" aria-expanded="false"><span class="chevron">▶</span> Evidence &amp; sources</button>
       <div class="evidence-content">
-        <p><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3434196" target="_blank" rel="noopener">Nolan &amp; Frishling (2019)</a> document how the <a href="https://www.legislation.gov.au/Details/C2018A00153" target="_blank" rel="noopener">Modern Slavery Act 2018 (Cth)</a> produces formal compliance without meaningful visibility for affected workers.</p>
-        <p>See also Locke (2013) on the limits of private auditing in supply chain governance.</p>
-        <cite><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3434196" target="_blank" rel="noopener">Nolan &amp; Frishling (2019)</a>; Locke (2013); <a href="https://www.legislation.gov.au/Details/C2018A00153" target="_blank" rel="noopener">Modern Slavery Act 2018 (Cth)</a>.</cite>
+        <p>Locke, R. (2013) documents the limits of private auditing in supply chain governance.</p>
+        <p><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3434196" target="_blank" rel="noopener">Nolan, J. &amp; Frishling, N. (2019)</a> document how the <a href="https://www.legislation.gov.au/Details/C2018A00153" target="_blank" rel="noopener">Modern Slavery Act 2018 (Cth)</a> produces formal compliance without meaningful visibility for affected workers.</p>
+        <cite>Locke (2013); <a href="https://www.legislation.gov.au/Details/C2018A00153" target="_blank" rel="noopener">Modern Slavery Act 2018 (Cth)</a>; <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3434196" target="_blank" rel="noopener">Nolan &amp; Frishling (2019)</a>.</cite>
       </div>
     </div>
   </div>
@@ -957,8 +958,8 @@
       <button class="evidence-toggle" onclick="toggleEvidence(this)" aria-expanded="false"><span class="chevron">▶</span> Evidence &amp; sources</button>
       <div class="evidence-content">
         <p><a href="https://www.sciencedirect.com/science/article/abs/pii/0364021388900237" target="_blank" rel="noopener">Sweller's cognitive load theory</a> distinguishes intrinsic load (inherent complexity) from extraneous load (poor presentation). LightKey reduces extraneous load while preserving intrinsic complexity.</p>
-        <p><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener">WCAG 2.2</a>, particularly the "understandable" principle, provides the accessibility foundation. Universal design holds that design for people with disability produces better outcomes for everyone.</p>
-        <cite><a href="https://www.sciencedirect.com/science/article/abs/pii/0364021388900237" target="_blank" rel="noopener">Sweller (1988; 2011)</a>; <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener">WCAG 2.2</a>; <a href="https://design.ncsu.edu/research/center-for-universal-design/" target="_blank" rel="noopener">Centre for Universal Design principles</a>.</cite>
+        <p><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener">Web Content Accessibility Guidelines (WCAG) 2.2</a>, particularly the "understandable" principle, provides the accessibility foundation. Universal design holds that design for people with disability produces better outcomes for everyone.</p>
+        <cite><a href="https://design.ncsu.edu/research/center-for-universal-design/" target="_blank" rel="noopener">Centre for Universal Design principles</a>; <a href="https://www.sciencedirect.com/science/article/abs/pii/0364021388900237" target="_blank" rel="noopener">Sweller (1988; 2011)</a>; <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener">WCAG 2.2</a>.</cite>
       </div>
     </div>
   </div>

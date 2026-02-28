@@ -57,11 +57,11 @@ const LK = {
   mobileMenu: `
     <div class="lk-mobile-menu" id="lkMobileMenu" aria-hidden="true">
       <div class="lk-mobile-menu-header">
-        <div class="lk-mobile-menu-title">LightKey</div>
+        <div class="lk-mobile-menu-title" style="text-align:center;">LightKey</div>
       </div>
       <nav aria-label="Mobile navigation">
-        <a href="/position/" data-nav="position">Position Paper</a>
         <a href="/" data-nav="home">Home</a>
+        <a href="/position/" data-nav="position">Position Paper</a>
         <span class="lk-mobile-future">Pathways <span class="lk-nav-badge">Building</span></span>
         <span class="lk-mobile-future">Guides <span class="lk-nav-badge">Building</span></span>
         <span class="lk-mobile-future">About <span class="lk-nav-badge">Building</span></span>

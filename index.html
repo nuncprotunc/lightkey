@@ -188,87 +188,6 @@
   }
   .arch-svg { width: 100%; height: 100%; }
 
-  /* ── Prism visualization ── */
-  .prism-visual {
-    max-width: 600px;
-    margin: 48px auto;
-    height: 300px;
-  }
-  .prism-svg { width: 100%; height: 100%; }
-  
-  .prism-triangle {
-    fill: #1A2332;
-    stroke: #3D7A8A;
-    stroke-width: 2.5;
-  }
-  
-  .prism-light-left {
-    stroke: #5A6B7D;
-    stroke-width: 1.2;
-    opacity: 0.4;
-  }
-  
-  .prism-ray {
-    stroke-width: 2;
-    opacity: 0;
-    animation: rayAppear 0.8s ease-out forwards;
-  }
-  
-  .prism-ray.r-process { stroke: #3D7A8A; animation-delay: 0.2s; }
-  .prism-ray.r-discretion { stroke: #3D7A8A; animation-delay: 0.4s; }
-  .prism-ray.r-decision { stroke: #8B7355; animation-delay: 0.6s; }
-  .prism-ray.r-delay { stroke: #9A5530; animation-delay: 0.8s; }
-  .prism-ray.r-review { stroke: #C85A6E; animation-delay: 1s; }
-  
-  .prism-label {
-    font-family: 'Lexend Deca', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    opacity: 0;
-    animation: labelAppear 0.6s ease-out forwards;
-  }
-  
-  .prism-label.l-process { fill: #3D7A8A; animation-delay: 0.4s; }
-  .prism-label.l-discretion { fill: #3D7A8A; animation-delay: 0.6s; }
-  .prism-label.l-decision { fill: #8B7355; animation-delay: 0.8s; }
-  .prism-label.l-delay { fill: #9A5530; animation-delay: 1s; }
-  .prism-label.l-review { fill: #C85A6E; animation-delay: 1.2s; }
-  
-  .prism-dot {
-    opacity: 0;
-    animation: dotAppear 0.4s ease-out forwards;
-  }
-  
-  .prism-dot.d-process { fill: #3D7A8A; animation-delay: 0.4s; }
-  .prism-dot.d-discretion { fill: #3D7A8A; animation-delay: 0.6s; }
-  .prism-dot.d-decision { fill: #8B7355; animation-delay: 0.8s; }
-  .prism-dot.d-delay { fill: #9A5530; animation-delay: 1s; }
-  .prism-dot.d-review { fill: #C85A6E; animation-delay: 1.2s; }
-  
-  @keyframes rayAppear {
-    from { opacity: 0; stroke-dasharray: 200; stroke-dashoffset: 200; }
-    to { opacity: 1; stroke-dasharray: 200; stroke-dashoffset: 0; }
-  }
-  
-  @keyframes labelAppear {
-    from { opacity: 0; transform: translateX(-10px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-  
-  @keyframes dotAppear {
-    from { opacity: 0; r: 0; }
-    to { opacity: 1; r: 4; }
-  }
-  
-  @media (prefers-reduced-motion: reduce) {
-    .prism-ray, .prism-label, .prism-dot {
-      animation: none;
-      opacity: 1;
-    }
-  }
-
   /* ── Sections ── */
   .section {
     max-width: 1100px;
@@ -306,6 +225,7 @@
   .strand-indicator.s-right    { background: var(--strand-right); }
   .strand-indicator.s-timeline { background: var(--strand-timeline); }
   .strand-indicator.s-decision { background: var(--strand-decision); }
+  .strand-indicator.s-keystone { background: var(--strand-keystone); }
 
   /* ── Archway pathway ── */
   .archway {
@@ -374,10 +294,9 @@
     color: var(--done);
   }
   .stone-shape.keystone-active {
-    background: var(--copper);
-    border-color: var(--copper);
+    background: var(--strand-keystone);
+    border-color: var(--strand-keystone);
     color: white;
-    box-shadow: 0 4px 16px rgba(154,85,48,0.2);
   }
   .stone-connector {
     width: 2px;
@@ -595,39 +514,6 @@
     <h2>Making an FOI Request</h2>
     <p class="lk-lead">Each stone is a step in the process. The keystone is the most important step. Colours show what kind of step it is.</p>
 
-    <div class="prism-visual" role="img" aria-label="Prism visualization showing five strands of legal process">
-      <svg class="prism-svg" viewBox="0 0 574 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <!-- Light rays from left (subtle) -->
-        <line class="prism-light-left" x1="50" y1="120" x2="100" y2="150" />
-        <line class="prism-light-left" x1="50" y1="140" x2="100" y2="150" />
-        <line class="prism-light-left" x1="50" y1="160" x2="100" y2="150" />
-        
-        <!-- Triangle prism -->
-        <polygon class="prism-triangle" points="100,80 100,220 210,150" />
-        
-        <!-- Colored rays to the right -->
-        <line class="prism-ray r-process" x1="210" y1="150" x2="450" y2="90" />
-        <line class="prism-ray r-discretion" x1="210" y1="150" x2="450" y2="125" />
-        <line class="prism-ray r-decision" x1="210" y1="150" x2="450" y2="150" />
-        <line class="prism-ray r-delay" x1="210" y1="150" x2="450" y2="185" />
-        <line class="prism-ray r-review" x1="210" y1="150" x2="450" y2="220" />
-        
-        <!-- Dots at ray endpoints -->
-        <circle class="prism-dot d-process" cx="450" cy="90" r="4" />
-        <circle class="prism-dot d-discretion" cx="450" cy="125" r="4" />
-        <circle class="prism-dot d-decision" cx="450" cy="150" r="4" />
-        <circle class="prism-dot d-delay" cx="450" cy="185" r="4" />
-        <circle class="prism-dot d-review" cx="450" cy="220" r="4" />
-        
-        <!-- Labels -->
-        <text class="prism-label l-process" x="465" y="95">PROCESS</text>
-        <text class="prism-label l-discretion" x="465" y="130">DISCRETION</text>
-        <text class="prism-label l-decision" x="465" y="155">DECISION</text>
-        <text class="prism-label l-delay" x="465" y="190">DELAY</text>
-        <text class="prism-label l-review" x="465" y="225">REVIEW</text>
-      </svg>
-    </div>
-
     <div class="strand-legend" role="img" aria-label="Legend: teal indicates rights, copper indicates timelines, stone indicates decision points">
       <div class="strand-legend-item">
         <div class="strand-indicator s-right"></div>
@@ -640,6 +526,10 @@
       <div class="strand-legend-item">
         <div class="strand-indicator s-decision"></div>
         <span>Decision / choice point</span>
+      </div>
+      <div class="strand-legend-item">
+        <div class="strand-indicator s-keystone"></div>
+        <span>Keystone</span>
       </div>
     </div>
 
@@ -687,7 +577,7 @@
             <div class="stone-name">Lodge with the agency
               <span class="stone-tag tag-timeline">Keystone · 30 days</span>
             </div>
-            <div class="stone-desc">This is the key step. When you send your request, the agency has 30 days to make a decision. That clock starts now. The time can be extended in some cases, but the law sets a firm starting point.</div>
+            <div class="stone-desc">This is the keystone. When you send your request, the agency has 30 days to make a decision. That clock starts now. The time can be extended in some cases, but the law sets a firm starting point.</div>
             <div class="stone-note note-timeline">The agency may ask you to narrow your request. This is called a "practical refusal" under section 24. They may also check with other people before releasing documents. This is allowed under section 26A. Both are normal parts of the process.</div>
           </div>
         </div>
@@ -761,7 +651,7 @@
         <img src="/portrait.png" alt="Portrait of Jay Spudvilas" width="320" height="426" loading="lazy" decoding="async" />
       </div>
       <div class="founder-bio">
-        <p>Jay Spudvilas is an education leader and researcher who started a Juris Doctor at ANU in 2026. He has twelve years of experience in public schools: building evidence systems, meeting legal requirements, and designing records that hold up under review.</p>
+        <p>Jay Spudvilas is an education leader and researcher who started a Juris Doctor at the Australian National University (ANU) in 2026. He has twelve years of experience in public schools: building evidence systems, meeting legal requirements, and designing records that hold up under review.</p>
         <p class="founder-meta">
           LightKey is a <a href="https://glasscase.org">GlassCase</a> initiative. Research identity: <a href="https://orcid.org/0009-0000-0945-0380" target="_blank" rel="noopener">ORCID 0009-0000-0945-0380</a>
         </p>
