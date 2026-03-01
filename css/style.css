@@ -291,6 +291,7 @@ a:hover { color: var(--stone-dark); }
   font-weight: 700;
   color: var(--stone-dark);
   margin-bottom: 4px;
+  text-align: center;
 }
 .lk-mobile-menu nav {
   display: flex;
