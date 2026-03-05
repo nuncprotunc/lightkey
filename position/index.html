@@ -769,22 +769,28 @@
     .evidence-toggle { display: none; }
   }
 
-  .meta-text {
-    color: var(--text-soft);
-    font-size: 0.875rem;
-    line-height: 1.6;
+  .pre-footer-meta {
     max-width: 680px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 1.5rem auto 2rem;
     padding: 0 2rem;
   }
 
-  .meta-text-top {
-    margin-top: 1rem;
+  .pre-footer-meta .meta-text {
+    color: var(--text-soft);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin: 0;
   }
 
-  .meta-text-tight {
+  .pre-footer-meta .meta-text + .meta-text {
     margin-top: 0.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .pre-footer-meta {
+      margin: 1.25rem auto 1.75rem;
+      padding: 0 1.25rem;
+    }
   }
 </style>
 </head>
@@ -1065,9 +1071,10 @@
   <p style="text-align:center;font-size:1.05rem;color:var(--text);margin-top:2rem;max-width:680px;margin-left:auto;margin-right:auto;"><strong>Making the path visible. Making fairness possible.</strong></p>
 </section>
 
-<div style="height: 1rem;"></div>
-<p class="meta-text meta-text-top"><strong>How to cite (APA 7):</strong> LightKey. (2026, February). <em>When the Pathway Is the Barrier: A Position Paper from LightKey</em> (Version 1.0). https://lightkey.org/position/</p>
-<p class="meta-text meta-text-tight"><strong>Licence:</strong> <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Not legal advice.</p>
+<section class="pre-footer-meta" aria-label="Citation and licence">
+  <p class="meta-text"><strong>How to cite (APA 7):</strong> LightKey. (2026, February). <em>When the Pathway Is the Barrier: A Position Paper from LightKey</em> (Version 1.0). https://lightkey.org/position/</p>
+  <p class="meta-text"><strong>Licence:</strong> <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Not legal advice.</p>
+</section>
 
 <div id="lk-footer"></div>
 
