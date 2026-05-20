@@ -204,11 +204,9 @@
     flex-shrink: 0;
   }
   .sw-right    { background: var(--strand-right); }
-  .sw-choice   { background: var(--strand-decision); }
-  .sw-process  { background: var(--stone); }
-  .sw-keystone { background: var(--strand-keystone); }
   .sw-timeline { background: var(--strand-timeline); }
-  .sw-decision { background: var(--teal); }
+  .sw-decision { background: var(--strand-decision); }
+  .sw-keystone { background: var(--strand-keystone); }
 
   /* ── View toggle (Tiles <-> Step-by-step) ── */
   .foi-view-switch-wrap {
@@ -341,18 +339,18 @@
     border-radius: 4px;
   }
 
-  /* Strand variants — tiles */
+  /* Semantic variants — tiles (4-colour master key) */
   .foi-tile.s-right    { border-left-color: var(--strand-right); }
   .foi-tile.s-right    .foi-tile-icon { color: var(--strand-right); }
   .foi-tile.s-right    .foi-tag  { background: var(--strand-right-bg); color: var(--strand-right); }
 
-  .foi-tile.s-choice   { border-left-color: var(--strand-decision); }
-  .foi-tile.s-choice   .foi-tile-icon { color: var(--strand-decision); }
-  .foi-tile.s-choice   .foi-tag  { background: var(--strand-decision-bg); color: var(--strand-decision); }
+  .foi-tile.s-timeline { border-left-color: var(--strand-timeline); }
+  .foi-tile.s-timeline .foi-tile-icon { color: var(--strand-timeline); }
+  .foi-tile.s-timeline .foi-tag  { background: var(--strand-timeline-bg); color: var(--strand-timeline); }
 
-  .foi-tile.s-process  { border-left-color: var(--stone); }
-  .foi-tile.s-process  .foi-tile-icon { color: var(--stone); }
-  .foi-tile.s-process  .foi-tag  { background: rgba(139,115,85,0.1); color: var(--stone-dark); }
+  .foi-tile.s-decision { border-left-color: var(--strand-decision); }
+  .foi-tile.s-decision .foi-tile-icon { color: var(--strand-decision); }
+  .foi-tile.s-decision .foi-tag  { background: var(--strand-decision-bg); color: var(--strand-decision); }
 
   .foi-tile.s-keystone {
     border-left-width: 6px;
@@ -363,13 +361,9 @@
   .foi-tile.s-keystone .foi-tile-title { color: var(--strand-keystone); }
   .foi-tile.s-keystone .foi-tag   { background: rgba(201,74,56,0.16); color: var(--strand-keystone); }
 
-  .foi-tile.s-timeline { border-left-color: var(--strand-timeline); }
-  .foi-tile.s-timeline .foi-tile-icon { color: var(--strand-timeline); }
-  .foi-tile.s-timeline .foi-tag  { background: var(--strand-timeline-bg); color: var(--strand-timeline); }
-
-  .foi-tile.s-decision { border-left-color: var(--teal); }
-  .foi-tile.s-decision .foi-tile-icon { color: var(--teal); }
-  .foi-tile.s-decision .foi-tag  { background: var(--teal-light); color: var(--teal); }
+  /* Neutral process tiles — no semantic colour, plain neutral border */
+  .foi-tile.s-process  .foi-tile-icon { color: var(--text-muted); }
+  .foi-tile.s-process  .foi-tag  { background: var(--surface); color: var(--text-muted); }
 
   /* ── Step-by-step view ── */
   .foi-timeline {
@@ -483,18 +477,14 @@
   .foi-step-option.opt-review  { border-left: 3px solid var(--teal); }
   .foi-step-option.opt-correct { border-left: 3px solid var(--strand-decision); }
 
-  /* Strand colouring — step view */
+  /* Semantic colouring — step view (4-colour master key) */
   .foi-step--right    .foi-step-icon { color: var(--strand-right); }
   .foi-step--right    .foi-step-tag  { background: var(--strand-right-bg); color: var(--strand-right); }
   .foi-step--right    .foi-step-detail { border-left-color: var(--strand-right); }
 
-  .foi-step--choice   .foi-step-icon { color: var(--strand-decision); }
-  .foi-step--choice   .foi-step-tag  { background: var(--strand-decision-bg); color: var(--strand-decision); }
-  .foi-step--choice   .foi-step-detail { border-left-color: var(--strand-decision); }
-
-  .foi-step--process  .foi-step-icon { color: var(--stone); }
-  .foi-step--process  .foi-step-tag  { background: rgba(139,115,85,0.1); color: var(--stone-dark); }
-  .foi-step--process  .foi-step-detail { border-left-color: var(--stone); }
+  /* Neutral process steps — no semantic colour */
+  .foi-step--process  .foi-step-icon { color: var(--text-muted); }
+  .foi-step--process  .foi-step-tag  { background: var(--surface); color: var(--text-muted); }
 
   .foi-step--keystone .foi-step-icon { color: var(--strand-keystone); }
   .foi-step--keystone .foi-step-tag  { background: rgba(201,74,56,0.16); color: var(--strand-keystone); }
@@ -505,9 +495,9 @@
   .foi-step--timeline .foi-step-tag  { background: var(--strand-timeline-bg); color: var(--strand-timeline); }
   .foi-step--timeline .foi-step-detail { border-left-color: var(--strand-timeline); }
 
-  .foi-step--decision .foi-step-icon { color: var(--teal); }
-  .foi-step--decision .foi-step-tag  { background: var(--teal-light); color: var(--teal); }
-  .foi-step--decision .foi-step-detail { border-left-color: var(--teal); }
+  .foi-step--decision .foi-step-icon { color: var(--strand-decision); }
+  .foi-step--decision .foi-step-tag  { background: var(--strand-decision-bg); color: var(--strand-decision); }
+  .foi-step--decision .foi-step-detail { border-left-color: var(--strand-decision); }
 
   .foi-step-tag {
     font-family: 'Lexend Deca', sans-serif;
@@ -839,12 +829,10 @@
     <p class="foi-section-label">Reading the pathway</p>
     <h2>What the colours mean</h2>
     <div class="foi-legend" role="img" aria-label="Legend: each step is colour-coded by the kind of step it is">
-      <div class="foi-legend-item"><span class="foi-legend-swatch sw-right"></span>Right</div>
-      <div class="foi-legend-item"><span class="foi-legend-swatch sw-choice"></span>Choice</div>
-      <div class="foi-legend-item"><span class="foi-legend-swatch sw-process"></span>Process</div>
+      <div class="foi-legend-item"><span class="foi-legend-swatch sw-right"></span>Right / entitlement</div>
+      <div class="foi-legend-item"><span class="foi-legend-swatch sw-timeline"></span>Timeline / deadline</div>
+      <div class="foi-legend-item"><span class="foi-legend-swatch sw-decision"></span>Decision / choice point</div>
       <div class="foi-legend-item"><span class="foi-legend-swatch sw-keystone"></span>Keystone</div>
-      <div class="foi-legend-item"><span class="foi-legend-swatch sw-timeline"></span>Timeline</div>
-      <div class="foi-legend-item"><span class="foi-legend-swatch sw-decision"></span>Decision</div>
     </div>
   </section>
 
@@ -886,7 +874,7 @@
           <span class="foi-tag">Right</span>
         </article>
 
-        <article class="foi-tile s-choice" aria-labelledby="t2-title">
+        <article class="foi-tile s-decision" aria-labelledby="t2-title">
           <div class="foi-tile-num">02</div>
           <div class="foi-tile-icon" aria-hidden="true">
             <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
@@ -899,7 +887,7 @@
           </div>
           <h3 class="foi-tile-title" id="t2-title">Choose pathway</h3>
           <p class="foi-tile-sentence">FOI gets documents. Review challenges decisions. Correction fixes records.</p>
-          <span class="foi-tag">Choice</span>
+          <span class="foi-tag">Decision / choice</span>
         </article>
 
         <article class="foi-tile s-process" aria-labelledby="t3-title">
@@ -978,10 +966,10 @@
           </div>
           <h3 class="foi-tile-title" id="t7-title">Read decision</h3>
           <p class="foi-tile-sentence">Check the schedule, redactions, reasons and review rights.</p>
-          <span class="foi-tag">Decision</span>
+          <span class="foi-tag">Decision / choice</span>
         </article>
 
-        <article class="foi-tile s-choice" aria-labelledby="t8-title">
+        <article class="foi-tile s-decision" aria-labelledby="t8-title">
           <div class="foi-tile-num">08</div>
           <div class="foi-tile-icon" aria-hidden="true">
             <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
@@ -994,7 +982,7 @@
           </div>
           <h3 class="foi-tile-title" id="t8-title">Choose next step</h3>
           <p class="foi-tile-sentence">Accept, seek review, ask for correction or use the records.</p>
-          <span class="foi-tag">Choice</span>
+          <span class="foi-tag">Decision / choice</span>
         </article>
 
       </div>
@@ -1022,7 +1010,7 @@
           </div>
         </li>
 
-        <li class="foi-step foi-step--choice">
+        <li class="foi-step foi-step--decision">
           <div class="foi-step-num">02</div>
           <div class="foi-step-content">
             <div class="foi-step-head">
@@ -1037,7 +1025,7 @@
                 </svg>
               </div>
               <h3 class="foi-step-title">Choose pathway</h3>
-              <span class="foi-step-tag">Choice</span>
+              <span class="foi-step-tag">Decision / choice</span>
             </div>
             <p class="foi-step-sentence">FOI gets documents. Review challenges decisions. Correction fixes records.</p>
             <div class="foi-step-detail">Documents you don&rsquo;t have &rarr; FOI. A record that&rsquo;s wrong about you &rarr; correction. Disagree with a decision &rarr; review. The wrong pathway wastes time.</div>
@@ -1146,14 +1134,14 @@
                 </svg>
               </div>
               <h3 class="foi-step-title">Read decision</h3>
-              <span class="foi-step-tag">Decision</span>
+              <span class="foi-step-tag">Decision / choice</span>
             </div>
             <p class="foi-step-sentence">Check the schedule, redactions, reasons and review rights.</p>
             <div class="foi-step-detail">The schedule of documents is your map. It lists every document found, what the agency did with each one, and why. Read it before deciding what to do next.</div>
           </div>
         </li>
 
-        <li class="foi-step foi-step--choice">
+        <li class="foi-step foi-step--decision">
           <div class="foi-step-num">08</div>
           <div class="foi-step-content">
             <div class="foi-step-head">
@@ -1169,7 +1157,7 @@
                 </svg>
               </div>
               <h3 class="foi-step-title">Choose next step</h3>
-              <span class="foi-step-tag">Choice</span>
+              <span class="foi-step-tag">Decision / choice</span>
             </div>
             <p class="foi-step-sentence">Accept, seek review, ask for correction or use the records.</p>
             <div class="foi-step-detail">
