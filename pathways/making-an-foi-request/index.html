@@ -787,17 +787,66 @@
   }
 
   /* ── Print ── */
+  @page {
+    size: A4 portrait;
+    margin: 16mm 14mm 18mm;
+  }
+
   @media print {
+    /* Keep strand colours in print */
+    * {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Hide site chrome, on-screen-only controls and the reviewer-only
+       UDL rationale appendix */
     .lk-nav, .lk-mobile-menu, .lk-mobile-overlay, .lk-footer,
-    .foi-view-switch-wrap, .foi-feedback { display: none !important; }
+    .foi-view-switch-wrap, .foi-feedback, .foi-rationale {
+      display: none !important;
+    }
+
     body { background: #fff; color: #000; }
-    .foi-pathway[data-view="tiles"]    .foi-view-timeline,
-    .foi-pathway[data-view="timeline"] .foi-view-tiles { display: block; }
-    .foi-tile, .foi-mini-card, .foi-step,
-    .foi-keystone-card, .foi-notes-card { break-inside: avoid; }
-    .foi-rationale[open] .foi-rationale-body,
-    .foi-rationale .foi-rationale-body { display: block; }
     a { color: #000; }
+
+    /* Print the step-by-step view only — vertical flow paginates cleanly,
+       the 4-column tile grid does not. Applies whichever view was on screen. */
+    .foi-view-tiles    { display: none !important; }
+    .foi-view-timeline { display: block !important; }
+
+    /* Container units that must not split across a page break */
+    .foi-hero,
+    .foi-scope,
+    .foi-step,
+    .foi-tile,
+    .foi-mini-card,
+    .foi-keystone-card,
+    .foi-notes-card,
+    .foi-how-card,
+    .foi-formula,
+    .foi-step-detail,
+    .foi-step-options,
+    .foi-doc-types,
+    .foi-legend {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    /* Keep headings and eyebrow labels with the content that follows */
+    .foi-section-label,
+    .foi-step-head,
+    .foi-kc-head,
+    .foi-mc-label,
+    h1, h2, h3, h4 {
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    /* Orphan/widow text control */
+    p, li {
+      orphans: 3;
+      widows: 3;
+    }
   }
 </style>
 </head>
