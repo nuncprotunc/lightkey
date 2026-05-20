@@ -805,8 +805,10 @@
   .foi-version-grid dd {
     margin: 0;
     color: var(--text-soft);
-    overflow-wrap: anywhere;
   }
+  /* Keep the citation URL whole — wraps to its own line, breaks within
+     itself only when the screen is too narrow to hold it */
+  .foi-cite-url { overflow-wrap: anywhere; }
 
   /* ── Print ── */
   /* Print-only identity header — hidden on screen */
@@ -1542,7 +1544,7 @@
       <dt>Pathway</dt><dd>Making an FOI Request &mdash; Commonwealth</dd>
       <dt>Status</dt><dd>Alpha 0.1</dd>
       <dt>Last updated</dt><dd>20 May 2026</dd>
-      <dt>Cite as</dt><dd>Jay Spudvilas, &lsquo;Making an FOI Request&rsquo;, <cite>LightKey</cite> (Web Page, Alpha 0.1, 20 May 2026) &lt;https://lightkey.org/pathways/making-an-foi-request/&gt;.</dd>
+      <dt>Cite as</dt><dd>Jay Spudvilas, &lsquo;Making an FOI Request&rsquo;, <cite>LightKey</cite> (Web Page, Alpha 0.1, 20 May 2026) <span class="foi-cite-url">&lt;https://lightkey.org/pathways/making-an-foi-request/&gt;.</span></dd>
       <dt>ORCID</dt><dd><a href="https://orcid.org/0009-0000-0945-0380">0009-0000-0945-0380</a></dd>
     </dl>
   </section>
