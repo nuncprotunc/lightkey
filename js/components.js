@@ -77,7 +77,7 @@ const LK = {
         <div class="lk-footer-copyright">
           &copy; 2026 LightKey &middot; A <a href="https://glasscase.org">GlassCase</a>&trade; Initiative &middot; <a href="/position/">Position Paper</a> &middot; <a href="/legal/">Use &amp; Privacy</a>
         </div>
-        <p class="lk-footer-disclaimer">Led by Jay Spudvilas (Jayden Spudvilas-Powell). Built in Australia. Made for everyone who believes fairness should be visible.</p>
+        <p class="lk-footer-disclaimer">Led by Jay Spudvilas. Built in Australia. Made for everyone who believes fairness should be visible.</p>
         <p class="lk-footer-disclaimer">Information only, not legal advice. See <a href="/legal/">Use &amp; Privacy</a> for full terms. &middot; <a href="#" onclick="if(typeof resetAnalyticsConsent==='function')resetAnalyticsConsent();return false;">Cookie Settings</a></p>
         <p class="lk-footer-disclaimer">GlassCase&trade; is a trade mark of Jayden Spudvilas-Powell.</p>
       </div>
