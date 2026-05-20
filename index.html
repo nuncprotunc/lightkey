@@ -224,161 +224,105 @@
   .strand-indicator.s-decision { background: var(--strand-decision); }
   .strand-indicator.s-keystone { background: var(--strand-keystone); }
 
-  /* ── Archway pathway ── */
-  .archway {
-    background: var(--surface-raised);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 40px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  /* ── FOI pathway preview ──
+     Shared step component with /pathways/making-an-foi-request/.
+     Keep the .foi-step* rules here in sync with the pathway page. ── */
+  .foi-timeline {
+    list-style: none;
+    margin-top: 20px;
   }
-  .archway-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 24px;
-    flex-wrap: wrap;
-    gap: 12px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--border);
-  }
-  .archway-title {
-    font-family: 'Literata', Georgia, serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--text);
-  }
-  .archway-badge {
-    font-size: 12px;
-    color: var(--stone);
-    background: var(--surface);
-    padding: 6px 14px;
-    border-radius: 6px;
-    font-weight: 500;
-  }
-
-  .stone-sequence { display: flex; flex-direction: column; }
-  .stone-block {
+  .foi-step {
     display: grid;
-    grid-template-columns: 60px 1fr;
-    gap: 20px;
+    grid-template-columns: 48px 1fr;
+    gap: 18px;
+    position: relative;
+    padding-bottom: 26px;
   }
-  .stone-marker {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .foi-step:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    left: 23px;
+    top: 52px;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
   }
-  .stone-shape {
-    width: 44px;
-    height: 38px;
+  .foi-step-num {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
     background: var(--surface);
     border: 1px solid var(--border);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Literata', serif;
-    font-size: 15px;
+    font-family: 'Literata', Georgia, serif;
+    font-size: 16px;
     font-weight: 700;
     color: var(--text-muted);
-    clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
-    flex-shrink: 0;
     position: relative;
-    z-index: 2;
+    z-index: 1;
   }
-  .stone-shape.complete {
-    background: rgba(106,138,90,0.1);
-    border-color: var(--done);
-    color: var(--done);
-  }
-  .stone-shape.keystone-active {
+  .foi-step--keystone .foi-step-num {
     background: var(--strand-keystone);
+    color: #fff;
     border-color: var(--strand-keystone);
-    color: white;
   }
-  .stone-connector {
-    width: 2px;
-    flex-grow: 1;
-    min-height: 16px;
-    background: var(--border);
-    margin: 4px 0;
-  }
-  .stone-connector.done { background: var(--done); }
-
-  .stone-body { padding-bottom: 24px; }
-  .stone-name {
-    font-family: 'Literata', Georgia, serif;
-    font-size: 17px;
-    font-weight: 500;
-    margin-bottom: 4px;
-    color: var(--text);
-  }
-
-  .stone-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    font-family: 'Lexend Deca', sans-serif;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    padding: 3px 10px;
-    border-radius: 4px;
-    vertical-align: middle;
-    margin-left: 8px;
-    font-weight: 500;
-  }
-  .stone-tag::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 2px;
-    flex-shrink: 0;
-  }
-  .tag-right      { background: var(--strand-right-bg);    color: var(--strand-right); }
-  .tag-right::before { background: var(--strand-right); }
-  .tag-timeline   { background: var(--strand-timeline-bg); color: var(--strand-timeline); }
-  .tag-timeline::before { background: var(--strand-timeline); }
-  .tag-decision   { background: var(--strand-decision-bg); color: var(--strand-decision); }
-  .tag-decision::before { background: var(--strand-decision); }
-  .tag-foundation { background: rgba(106,138,90,0.1); color: var(--done); }
-  .tag-foundation::before { background: var(--done); }
-
-  .stone-desc {
-    font-size: 16px;
-    color: var(--text-soft);
-    line-height: 1.8;
-    max-width: 540px;
-  }
-  .stone-note {
-    margin-top: 10px;
-    padding: 14px 18px;
-    background: var(--bg);
-    border-radius: 8px;
-    font-size: 15px;
-    color: var(--text-soft);
-    line-height: 1.75;
-    border-left: 3px solid var(--border);
-  }
-  .stone-note.note-right    { border-left-color: var(--strand-right); }
-  .stone-note.note-timeline { border-left-color: var(--strand-timeline); }
-  .stone-note.note-decision { border-left-color: var(--strand-decision); }
-
-  .stone-options {
-    margin-top: 12px;
+  .foi-step-content { padding-top: 2px; }
+  .foi-step-head {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
     flex-wrap: wrap;
   }
-  .option-stone {
-    font-size: 13px;
-    padding: 8px 16px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    color: var(--text-soft);
-    transition: border-color 0.2s ease;
+  .foi-step-icon { width: 30px; height: 30px; flex-shrink: 0; }
+  .foi-step-icon svg { width: 100%; height: 100%; display: block; }
+  .foi-step-title {
+    font-family: 'Literata', Georgia, serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.25;
   }
-  .option-stone:hover { border-color: var(--teal); }
+  .foi-step-sentence {
+    color: var(--text-soft);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+  .foi-step-detail {
+    background: var(--bg);
+    border-left: 3px solid var(--border);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-soft);
+  }
+  .foi-step-tag {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 4px;
+  }
+
+  /* Semantic colouring — 4-colour master key */
+  .foi-step--right    .foi-step-icon { color: var(--strand-right); }
+  .foi-step--right    .foi-step-tag  { background: var(--strand-right-bg); color: var(--strand-right); }
+  .foi-step--right    .foi-step-detail { border-left-color: var(--strand-right); }
+
+  .foi-step--decision .foi-step-icon { color: var(--strand-decision); }
+  .foi-step--decision .foi-step-tag  { background: var(--strand-decision-bg); color: var(--strand-decision); }
+  .foi-step--decision .foi-step-detail { border-left-color: var(--strand-decision); }
+
+  /* Neutral process steps — no semantic colour, no tag */
+  .foi-step--process  .foi-step-icon { color: var(--text-muted); }
+
+  .foi-preview-cta { margin-top: 14px; }
 
   /* ── Values grid ── */
   .values {
@@ -464,7 +408,6 @@
     .hero h1 { font-size: 32px; }
     .hero { padding: 48px 24px 32px; }
     .values { grid-template-columns: 1fr; }
-    .archway { padding: 24px; }
     .strand-legend { gap: 12px; }
   }
   @media (max-width: 640px) {
@@ -509,7 +452,7 @@
   <section class="section" id="explainer">
     <div class="lk-section-label">Legal Pathway Visual Explainer</div>
     <h2>Making an FOI Request</h2>
-    <p class="lk-lead">Each stone is a step in the process. The keystone is the most important step. Colours show what kind of step it is.</p>
+    <p class="lk-lead">Each step is colour-coded by what kind of step it is. Here are the first three &mdash; open the full pathway for all eight.</p>
 
     <div class="strand-legend" role="img" aria-label="Legend: teal indicates rights, copper indicates timelines, stone indicates decision points">
       <div class="strand-legend-item">
@@ -530,87 +473,77 @@
       </div>
     </div>
 
-    <div class="archway">
-      <div class="archway-header">
-        <span class="archway-title">Freedom of Information — Commonwealth</span>
-        <span class="archway-badge">5 stones · 1 keystone · 2 choices</span>
-      </div>
+    <ol class="foi-timeline">
 
-      <div class="stone-sequence">
-
-        <div class="stone-block">
-          <div class="stone-marker">
-            <div class="stone-shape complete">1</div>
-            <div class="stone-connector done"></div>
-          </div>
-          <div class="stone-body">
-            <div class="stone-name">Identify your right
-              <span class="stone-tag tag-right">Right</span>
-              <span class="stone-tag tag-foundation">Foundation</span>
+      <li class="foi-step foi-step--right">
+        <div class="foi-step-num">01</div>
+        <div class="foi-step-content">
+          <div class="foi-step-head">
+            <div class="foi-step-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="24" cy="22" r="7"/>
+                <path d="M11 50 C11 38 17 34 24 34 C31 34 37 38 37 50"/>
+                <path d="M44 18 C44 13 48 11 51 11 C55 11 58 14 58 18 C58 22 54 23 51 26 L51 30"/>
+                <circle cx="51" cy="36" r="1.5" fill="currentColor" stroke="none"/>
+              </svg>
             </div>
-            <div class="stone-desc">You have a legal right to see government documents. Anyone can use this right. You do not need to be a citizen or have any special qualifications.</div>
-            <div class="stone-note note-right">This right comes from the Freedom of Information Act 1982 (Cth). See section 11.</div>
+            <h3 class="foi-step-title">Name the concern</h3>
+            <span class="foi-step-tag">Right</span>
           </div>
+          <p class="foi-step-sentence">What happened? What record would show it?</p>
+          <div class="foi-step-detail">FOI is for documents &mdash; not questions, complaints or appeals. Work out what you want to know, then ask for the records that would show it.</div>
         </div>
+      </li>
 
-        <div class="stone-block">
-          <div class="stone-marker">
-            <div class="stone-shape complete">2</div>
-            <div class="stone-connector done"></div>
-          </div>
-          <div class="stone-body">
-            <div class="stone-name">Prepare your request</div>
-            <div class="stone-desc">Write a short description of what you want. You do not need file names. Just say the topic, the type of document, and the time period.</div>
-            <div class="stone-note">A good starting format: "All correspondence, briefing notes, and minutes about [your topic] between [start date] and [end date]."</div>
-          </div>
-        </div>
-
-        <div class="stone-block">
-          <div class="stone-marker">
-            <div class="stone-shape keystone-active">3</div>
-            <div class="stone-connector"></div>
-          </div>
-          <div class="stone-body">
-            <div class="stone-name">Lodge with the agency
-              <span class="stone-tag tag-timeline">Keystone · 30 days</span>
+      <li class="foi-step foi-step--decision">
+        <div class="foi-step-num">02</div>
+        <div class="foi-step-content">
+          <div class="foi-step-head">
+            <div class="foi-step-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M32 56 L32 38"/>
+                <path d="M32 38 L18 18"/>
+                <path d="M32 38 L46 18"/>
+                <circle cx="18" cy="18" r="3" fill="currentColor" stroke="none"/>
+                <circle cx="46" cy="18" r="3" fill="currentColor" stroke="none"/>
+                <circle cx="32" cy="56" r="3" fill="currentColor" stroke="none"/>
+              </svg>
             </div>
-            <div class="stone-desc">This is the keystone. When you send your request, the agency has 30 days to make a decision. That clock starts now. The time can be extended in some cases, but the law sets a firm starting point.</div>
-            <div class="stone-note note-timeline">The agency may ask you to narrow your request. This is called a "practical refusal" under section 24. They may also check with other people before releasing documents. This is allowed under section 26A. Both are normal parts of the process.</div>
+            <h3 class="foi-step-title">Choose pathway</h3>
+            <span class="foi-step-tag">Decision</span>
           </div>
+          <p class="foi-step-sentence">FOI gets documents. Review challenges decisions. Correction fixes records.</p>
+          <div class="foi-step-detail">Documents you don&rsquo;t have &rarr; FOI. A record that&rsquo;s wrong about you &rarr; correction. Disagree with a decision &rarr; review. The wrong pathway wastes time.</div>
         </div>
+      </li>
 
-        <div class="stone-block">
-          <div class="stone-marker">
-            <div class="stone-shape">4</div>
-            <div class="stone-connector"></div>
-          </div>
-          <div class="stone-body">
-            <div class="stone-name">Agency decision
-              <span class="stone-tag tag-decision">Decision point</span>
+      <li class="foi-step foi-step--process">
+        <div class="foi-step-num">03</div>
+        <div class="foi-step-content">
+          <div class="foi-step-head">
+            <div class="foi-step-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 54 L58 54"/>
+                <path d="M8 22 L32 8 L56 22"/>
+                <path d="M12 22 L12 50"/>
+                <path d="M52 22 L52 50"/>
+                <line x1="20" y1="26" x2="20" y2="50"/>
+                <line x1="28" y1="26" x2="28" y2="50"/>
+                <line x1="36" y1="26" x2="36" y2="50"/>
+                <line x1="44" y1="26" x2="44" y2="50"/>
+              </svg>
             </div>
-            <div class="stone-desc">The agency makes a decision. They can give you full access, partial access, or refuse. If they refuse or redact, they must explain why for each document.</div>
-            <div class="stone-note note-decision">Look for the "schedule of documents" in the decision letter. It lists every document found, the decision on each one, and the reason. This is your map of what they decided and why.</div>
+            <h3 class="foi-step-title">Find the agency</h3>
           </div>
+          <p class="foi-step-sentence">Send it to the body most likely to hold the documents.</p>
+          <div class="foi-step-detail">Pick the most likely record-holder &mdash; department, regulator, public authority or minister&rsquo;s office. Don&rsquo;t send the same broad request to everyone.</div>
         </div>
+      </li>
 
-        <div class="stone-block">
-          <div class="stone-marker">
-            <div class="stone-shape">5</div>
-          </div>
-          <div class="stone-body">
-            <div class="stone-name">Review options
-              <span class="stone-tag tag-decision">Choice point</span>
-            </div>
-            <div class="stone-desc">If you are not happy with the decision, you have three options. Each one is a fresh look at what the agency decided.</div>
-            <div class="stone-options">
-              <span class="option-stone">Internal review (same agency, fresh eyes)</span>
-              <span class="option-stone">Information Commissioner review</span>
-              <span class="option-stone">Administrative Appeals Tribunal</span>
-            </div>
-          </div>
-        </div>
+    </ol>
 
-      </div>
+    <div class="foi-preview-cta">
+      <a href="/pathways/making-an-foi-request/" class="cta-primary">See the full pathway &rarr;</a>
     </div>
   </section>
 
