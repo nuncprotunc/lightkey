@@ -786,6 +786,27 @@
     .foi-feedback { padding: 18px 18px; }
   }
 
+  /* ── Version / revision colophon ── */
+  .foi-version-grid {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 6px 20px;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .foi-version-grid dt {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    align-self: center;
+  }
+  .foi-version-grid dd {
+    margin: 0;
+    color: var(--text-soft);
+  }
+
   /* ── Print ── */
   /* Print-only identity header — hidden on screen */
   .foi-print-identity { display: none; }
@@ -1510,6 +1531,16 @@
         </div>
       </div>
     </details>
+  </section>
+
+  <!-- ─── Version ─── -->
+  <section class="foi-section foi-version" aria-label="Version and revision">
+    <p class="foi-section-label">Version</p>
+    <dl class="foi-version-grid">
+      <dt>Pathway</dt><dd>Making an FOI Request &mdash; Commonwealth</dd>
+      <dt>Status</dt><dd>Alpha 0.1</dd>
+      <dt>Last updated</dt><dd>20 May 2026</dd>
+    </dl>
   </section>
 
 </main>
