@@ -33,7 +33,7 @@ const LK = {
         <div class="lk-nav-right">
           <nav class="lk-desktop-nav" aria-label="Main links">
             <a href="/position/" data-nav="position">Position Paper</a>
-            <span class="lk-nav-future">Pathways <span class="lk-nav-badge">Building</span></span>
+            <a href="/pathways/" data-nav="pathways">Pathways</a>
             <span class="lk-nav-future">Guides <span class="lk-nav-badge">Building</span></span>
             <span class="lk-nav-future">About <span class="lk-nav-badge">Building</span></span>
             <a href="/legal/" data-nav="legal">Use &amp; Privacy</a>
@@ -62,7 +62,7 @@ const LK = {
       <nav aria-label="Mobile navigation">
         <a href="/" data-nav="home">Home</a>
         <a href="/position/" data-nav="position">Position Paper</a>
-        <span class="lk-mobile-future">Pathways <span class="lk-nav-badge">Building</span></span>
+        <a href="/pathways/" data-nav="pathways">Pathways</a>
         <span class="lk-mobile-future">Guides <span class="lk-nav-badge">Building</span></span>
         <span class="lk-mobile-future">About <span class="lk-nav-badge">Building</span></span>
         <a href="/legal/" data-nav="legal">Use &amp; Privacy</a>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<script src="/js/consent-gate.js" defer></script>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="81bX+0jSjxXWI25HF5EjhQ" async></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pathways | LightKey</title>
+<meta name="description" content="LightKey Pathways are interactive, step-by-step maps of Australian legal processes. Start with the Commonwealth FOI request pathway.">
+<meta name="keywords" content="LightKey, legal pathways, FOI, freedom of information, plain language law, legal accessibility, administrative law, step-by-step legal guide, GlassCase">
+<meta name="author" content="LightKey — Jay Spudvilas">
+<link rel="canonical" href="https://lightkey.org/pathways/">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#F5F0E8">
+<meta name="color-scheme" content="light">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lightkey.org/pathways/">
+<meta property="og:title" content="Pathways | LightKey">
+<meta property="og:description" content="Interactive, step-by-step maps of Australian legal processes. Start with the Commonwealth FOI request pathway.">
+<meta property="og:site_name" content="LightKey">
+<meta property="og:locale" content="en_AU">
+<meta property="og:image" content="https://lightkey.org/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="LightKey | Making Law Accessible">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://lightkey.org/pathways/">
+<meta name="twitter:title" content="Pathways | LightKey">
+<meta name="twitter:description" content="Interactive, step-by-step maps of Australian legal processes.">
+<meta name="twitter:image" content="https://lightkey.org/og-image.png">
+<meta name="twitter:image:alt" content="LightKey | Making Law Accessible">
+
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://lightkey.org/pathways/#webpage",
+      "url": "https://lightkey.org/pathways/",
+      "name": "Pathways | LightKey",
+      "description": "Interactive, step-by-step maps of Australian legal processes from LightKey.",
+      "inLanguage": "en-AU",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "LightKey",
+        "url": "https://lightkey.org/"
+      },
+      "hasPart": [
+        {
+          "@type": "HowTo",
+          "name": "Making an FOI Request",
+          "url": "https://lightkey.org/pathways/making-an-foi-request/"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "LightKey", "item": "https://lightkey.org/" },
+        { "@type": "ListItem", "position": 2, "name": "Pathways", "item": "https://lightkey.org/pathways/" }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="apple-touch-icon" sizes="128x128" href="/favicon-128.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,300;7..72,400;7..72,500;7..72,700&family=Lexend+Deca:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=2026-03-02">
+<style>
+  /* ═══════════════════════════════════════════════════════
+     Page-specific styles — pathways/index.html only
+     Shared tokens, nav and footer live in /css/style.css.
+     ═══════════════════════════════════════════════════════ */
+
+  .pw-hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 56px 28px 0;
+    text-align: center;
+  }
+  .pw-hero-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--copper);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .pw-hero h1 {
+    font-family: 'Literata', Georgia, serif;
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 14px;
+  }
+  .pw-hero-sub {
+    font-size: 16px;
+    color: var(--text-soft);
+    line-height: 1.85;
+    max-width: 620px;
+    margin: 0 auto 8px;
+  }
+
+  .pw-body {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 28px 80px;
+  }
+
+  .pw-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Pathway card */
+  .pw-card {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+  }
+  a.pw-card { color: inherit; }
+  a.pw-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    color: inherit;
+  }
+  a.pw-card:focus-visible {
+    outline: 3px solid var(--teal);
+    outline-offset: 3px;
+  }
+  .pw-card-status {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    color: var(--copper);
+    background: var(--copper-bg);
+    border: 1px solid var(--teal-border);
+    border-color: rgba(154,85,48,0.2);
+    border-radius: 4px;
+    padding: 3px 9px;
+    align-self: flex-start;
+    margin-bottom: 14px;
+  }
+  .pw-card h2 {
+    font-family: 'Literata', Georgia, serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .pw-card p {
+    font-size: 15px;
+    color: var(--text-soft);
+    line-height: 1.75;
+    margin-bottom: 16px;
+    flex: 1;
+  }
+  .pw-card-cta {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--teal);
+  }
+  a.pw-card:hover .pw-card-cta { color: var(--copper); }
+
+  /* Coming-soon note card */
+  .pw-soon {
+    background: var(--surface);
+    border: 1px dashed var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .pw-soon h2 {
+    font-family: 'Literata', Georgia, serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-soft);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .pw-soon p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.75;
+  }
+
+  @media (max-width: 640px) {
+    .pw-hero { padding: 40px 20px 0; }
+    .pw-body { padding: 32px 20px 64px; }
+    .pw-list { grid-template-columns: 1fr; }
+    .pw-card, .pw-soon { padding: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="lk-nav"></div>
+<div id="lk-mobile-menu"></div>
+
+<div class="pw-hero">
+  <p class="pw-hero-label">lightkey.org</p>
+  <h1>Pathways</h1>
+  <p class="pw-hero-sub">Pathways are interactive, step-by-step maps of legal processes &mdash; the full route from start to finish, broken into clear steps you can follow at your own pace.</p>
+  <p class="pw-hero-sub">Where a guide explains an idea, a pathway shows you the way through.</p>
+</div>
+
+<main id="main" class="pw-body" aria-labelledby="pw-heading">
+  <h2 id="pw-heading" class="lk-section-label" style="margin-bottom:16px;">Available pathways</h2>
+
+  <div class="pw-list">
+
+    <a class="pw-card" href="/pathways/making-an-foi-request/">
+      <span class="pw-card-status">Legal Pathway · Alpha 0.1</span>
+      <h2>Making an FOI Request</h2>
+      <p>A step-by-step pathway for making a Commonwealth freedom of information (FOI) request &mdash; from naming your concern to reading the decision and choosing what to do next.</p>
+      <span class="pw-card-cta">Open this pathway &rarr;</span>
+    </a>
+
+    <div class="pw-soon">
+      <h2>More pathways are coming</h2>
+      <p>New pathways are in development. Each one will map another Australian legal process into clear, colour-coded steps.</p>
+    </div>
+
+  </div>
+</main>
+
+<div id="lk-footer"></div>
+
+<script src="/js/main.js?v=20260228"></script>
+<script src="/js/components.js?v=20260520"></script>
+
+</body>
+</html>
