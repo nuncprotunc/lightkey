@@ -816,27 +816,29 @@
   /* Print-only identity header — hidden on screen */
   .foi-print-identity { display: none; }
 
+  /* One-page A4-landscape reference: compact pathway, request formula and
+     accuracy notes. The on-screen layout is untouched. */
   @page {
-    size: A4 portrait;
-    margin: 16mm 14mm 20mm;
+    size: A4 landscape;
+    margin: 8mm 11mm 9mm;
 
     /* Running footer — Chrome/Safari/Edge honour margin boxes; Firefox omits */
     @bottom-left {
       content: "LightKey · Alpha 0.1";
       font-family: 'Lexend Deca', sans-serif;
-      font-size: 8pt;
+      font-size: 7pt;
       color: #8A7E70;
     }
     @bottom-center {
-      content: "Page " counter(page) " of " counter(pages);
+      content: "DOI 10.5281/zenodo.20302675";
       font-family: 'Lexend Deca', sans-serif;
-      font-size: 8pt;
+      font-size: 7pt;
       color: #8A7E70;
     }
     @bottom-right {
       content: "lightkey.org";
       font-family: 'Lexend Deca', sans-serif;
-      font-size: 8pt;
+      font-size: 7pt;
       color: #8A7E70;
     }
   }
@@ -852,94 +854,127 @@
     .foi-print-identity {
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
+      align-items: baseline;
       gap: 16px;
-      padding-bottom: 6mm;
-      margin-bottom: 8mm;
+      padding-bottom: 2mm;
+      margin-bottom: 2mm;
       border-bottom: 1px solid var(--border);
     }
-    .foi-print-brand {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .foi-print-mark {
-      width: 22px;
-      height: 22px;
-      flex-shrink: 0;
-      align-self: center;
-    }
+    .foi-print-brand { display: flex; align-items: baseline; gap: 7px; flex-wrap: wrap; }
+    .foi-print-mark { width: 15px; height: 15px; flex-shrink: 0; align-self: center; }
     .foi-print-name {
       font-family: 'Literata', Georgia, serif;
-      font-size: 15pt;
+      font-size: 11.5pt;
       font-weight: 700;
       color: var(--text);
       letter-spacing: -0.01em;
     }
     .foi-print-tagline {
       font-family: 'Lexend Deca', sans-serif;
-      font-size: 8.5pt;
+      font-size: 7.5pt;
       color: var(--text-muted);
     }
     .foi-print-url {
       font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-      font-size: 8pt;
+      font-size: 6.5pt;
       color: var(--text-muted);
-      letter-spacing: 0.01em;
       white-space: nowrap;
     }
 
-    /* Hide site chrome, on-screen-only controls and the reviewer-only
-       UDL rationale appendix */
+    /* Hide site chrome, on-screen controls, the sections outside the
+       one-page reference, and the bulkiest sub-elements of the kept
+       cards (document-type chips and the card's secondary heading). */
     .lk-nav, .lk-mobile-menu, .lk-mobile-overlay, .lk-footer,
-    .foi-view-switch-wrap, .foi-feedback, .foi-rationale {
+    .foi-view-switch-wrap, .foi-print-hide, .foi-doi,
+    .foi-doc-types, .foi-kc-head {
       display: none !important;
     }
 
-    body { background: #fff; color: #000; }
+    body { background: #fff; color: #000; margin: 0 !important; padding: 0 !important; }
+    main { margin: 0 !important; padding: 0 !important; }
     a { color: #000; }
 
-    /* Print the step-by-step view only — vertical flow paginates cleanly,
-       the 4-column tile grid does not. Applies whichever view was on screen. */
-    .foi-view-tiles    { display: none !important; }
-    .foi-view-timeline { display: block !important; }
+    /* Print the compact tile grid, never the long step-by-step view */
+    .foi-view-tiles    { display: grid !important; }
+    .foi-view-timeline { display: none !important; }
 
-    /* Container units that must not split across a page break */
-    .foi-hero,
-    .foi-scope,
-    .foi-step,
-    .foi-tile,
-    .foi-mini-card,
-    .foi-keystone-card,
-    .foi-notes-card,
-    .foi-how-card,
-    .foi-formula,
-    .foi-step-detail,
-    .foi-step-options,
-    .foi-doc-types,
-    .foi-legend,
-    .foi-version,
-    .foi-version-grid {
+    /* Strip section chrome — full width, no auto margins, tight rhythm */
+    .foi-hero, .foi-scope, .foi-section {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Hero — compact title block */
+    .foi-hero { margin-bottom: 1.5mm; }
+    .foi-status { font-size: 7.5pt; margin-bottom: 3px; }
+    .foi-hero h1 { font-size: 19pt; line-height: 1.13; margin-bottom: 3px; }
+    .foi-lead { font-size: 9.5pt; line-height: 1.4; max-width: none; }
+
+    /* Scope disclaimer */
+    .foi-scope { margin-bottom: 1.5mm; }
+    .foi-scope-inner { padding: 6px 11px; font-size: 8pt; line-height: 1.45; }
+
+    /* Tile grid — 4 × 2 */
+    .foi-tiles-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin: 0 0 1.5mm;
+    }
+    .foi-tile {
+      min-height: 0;
+      padding: 7px 10px 8px;
+      border-radius: 7px;
       break-inside: avoid;
       page-break-inside: avoid;
     }
+    .foi-tile-num { top: 7px; left: 9px; font-size: 8.5px; padding: 1px 6px; }
+    .foi-tile-icon { width: 18px; height: 18px; margin: 4px auto 3px; }
+    .foi-tile-title { font-size: 11pt; line-height: 1.2; margin-bottom: 3px; }
+    .foi-tile-sentence { font-size: 8pt; line-height: 1.3; margin-bottom: 4px; }
+    .foi-tag { font-size: 7pt; padding: 2px 8px; }
 
-    /* Keep headings and eyebrow labels with the content that follows */
-    .foi-section-label,
-    .foi-step-head,
-    .foi-kc-head,
-    .foi-mc-label,
-    h1, h2, h3, h4 {
+    /* Section headings for the two kept cards */
+    .foi-section-label { display: none; }
+    .foi-section h2 { font-size: 12pt; margin-bottom: 5px; }
+
+    /* Keystone request formula */
+    .foi-keystone-card {
+      padding: 9px 13px;
+      margin: 0 0 1.5mm;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .foi-formula { font-size: 10pt; line-height: 1.45; padding: 7px 11px; margin-top: 0; }
+    .foi-ph { font-size: 8.5pt; }
+    .foi-kc-rule { margin-top: 6px; font-size: 8.5pt; }
+
+    /* Accuracy notes — three columns */
+    .foi-notes-card {
+      padding: 9px 13px;
+      margin: 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .foi-notes-card ul {
+      display: block;
+      column-count: 3;
+      column-gap: 20px;
+      margin: 0 0 0 1rem;
+    }
+    .foi-notes-card li {
+      font-size: 8pt;
+      line-height: 1.33;
+      margin-bottom: 5px;
+      break-inside: avoid;
+    }
+
+    /* Keep headings with the content that follows */
+    h1, h2, h3 {
       break-after: avoid;
       page-break-after: avoid;
     }
-
-    /* Orphan/widow text control */
-    p, li {
-      orphans: 3;
-      widows: 3;
-    }
+    p, li { orphans: 2; widows: 2; }
   }
 </style>
 </head>
@@ -989,7 +1024,7 @@
   </section>
 
   <!-- ─── Legend ─── -->
-  <section class="foi-section" aria-label="Pathway strand legend">
+  <section class="foi-section foi-print-hide" aria-label="Pathway strand legend">
     <p class="foi-section-label">Reading the pathway</p>
     <h2>What the colours mean</h2>
     <div class="foi-legend" role="img" aria-label="Legend: each step is colour-coded by the kind of step it is">
@@ -1001,7 +1036,7 @@
   </section>
 
   <!-- ─── View toggle ─── -->
-  <section class="foi-section" aria-labelledby="foi-view-label">
+  <section class="foi-section foi-print-hide" aria-labelledby="foi-view-label">
     <p class="foi-section-label">Choose your view</p>
     <h2 id="foi-view-label">The FOI pathway</h2>
     <div class="foi-view-switch-wrap">
@@ -1370,7 +1405,7 @@
   </section>
 
   <!-- ─── During the wait (Step 06 expansion) ─── -->
-  <section class="foi-section">
+  <section class="foi-section foi-print-hide">
     <p class="foi-section-label">Step 06 · What might happen next</p>
     <h2>During the wait, the agency may come back</h2>
     <div class="foi-trio">
@@ -1413,7 +1448,7 @@
   </section>
 
   <!-- ─── After the decision (Step 08 expansion) ─── -->
-  <section class="foi-section">
+  <section class="foi-section foi-print-hide">
     <p class="foi-section-label">Step 08 · After the decision</p>
     <h2>Three things you can do</h2>
     <div class="foi-trio">
@@ -1473,7 +1508,7 @@
   </section>
 
   <!-- ─── How to use this page ─── -->
-  <section class="foi-section">
+  <section class="foi-section foi-print-hide">
     <p class="foi-section-label">Navigate at your own pace</p>
     <h2>Choose how to use this page</h2>
     <div class="foi-how-card">
@@ -1489,7 +1524,7 @@
   </section>
 
   <!-- ─── Alpha feedback ─── -->
-  <section class="foi-section">
+  <section class="foi-section foi-print-hide">
     <p class="foi-section-label">Help shape this pathway</p>
     <h2>Alpha feedback</h2>
     <div class="foi-feedback">
@@ -1505,7 +1540,7 @@
   </section>
 
   <!-- ─── Reviewer rationale ─── -->
-  <section class="foi-section">
+  <section class="foi-section foi-print-hide">
     <p class="foi-section-label">For reviewers</p>
     <h2>Design rationale</h2>
     <details class="foi-rationale">
@@ -1547,7 +1582,7 @@
   </section>
 
   <!-- ─── Version ─── -->
-  <section class="foi-section foi-version" aria-label="Version and revision">
+  <section class="foi-section foi-version foi-print-hide" aria-label="Version and revision">
     <p class="foi-section-label">Version</p>
     <dl class="foi-version-grid">
       <dt>Pathway</dt><dd>Making an FOI Request &mdash; Commonwealth</dd>
