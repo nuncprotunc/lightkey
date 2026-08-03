@@ -79,7 +79,7 @@ const LK = {
         </div>
         <p class="lk-footer-disclaimer">Led by Jay Spudvilas. Built in Australia. Made for everyone who believes fairness should be visible.</p>
         <p class="lk-footer-disclaimer">Information only, not legal advice. See <a href="/legal/">Use &amp; Privacy</a> for full terms. &middot; <a href="#" onclick="if(typeof resetAnalyticsConsent==='function')resetAnalyticsConsent();return false;">Cookie Settings</a></p>
-        <p class="lk-footer-disclaimer">GlassCase™ is a trade mark of Jayden Spudvilas-Powell.</p>
+        <p class="lk-footer-disclaimer">GlassCase™ is a <a href="https://search.ipaustralia.gov.au/trademarks/search/view/2622499" target="_blank" rel="noopener">trade mark</a> of Jayden Spudvilas-Powell.</p>
       </div>
     </footer>
   `
